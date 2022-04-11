@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Tooth Fairy</title>
+        <link href="addPatientInfoPage.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="backBtn">
+            <button type="button" id="backBtn" onclick="location.href='receptionistPage.html'">Back</button>
+        </div>
+        <div class="logoTitle">
+            <p>Tooth Fairy</p>
+        </div> <br> <br>
+        <div class="addPatientPageStatement" id="addPPageS">
+            <p>Fill All Information Below to Add a New Patient</p>
+        </div> <br>
+        <form autocomplete="off">
+            <p>Full Name:</p>
+            <input type="text" id="firstName" placeholder="First Name">
+            <input type="text" id="middleName" placeholder="Middle Name">
+            <input type="text" id="lastName" placeholder="Last Name"> <br> <br>
+            <p>Identification:</p>
+            <input type="number" id="SSN" placeholder="SSN">
+            <input type="number" id="ID" placeholder="ID"> <br> <br>
+            <p>Address:</p>
+            <input type="number" id="houseNumber" placeholder="House Number">
+            <input type="text" id="streetName" placeholder="Street Name">
+            <input type="text" id="city" placeholder="City">
+            <input type="text" id="province" placeholder="Province"> <br> <br>
+            <p>Gender and Age:</p>
+            <input type="radio" name="genderSet" id="genderMale" value="Male">
+            <label for="genderMale">Male</label>
+            <input type="radio" name="genderSet" id="genderFemale" value="Female">
+            <label for="genderFemale">Female</label>
+            <input type="radio" name="genderSet" id="genderOther" value="Other">
+            <label for="genderOther">Other</label> <br> <br>
+            <input type="number" id="age" placeholder="Age" min="15"> <br> <br>
+            <p>Contact Information:</p>
+            <input type="email" id="emailAddress" placeholder="Email Address">
+            <input type="text" id="phoneNumber" placeholder="Phone Number (No Dashes)"> <br> <br>
+            <p>Birth Date:</p>
+            <input type="date" id="birthDate"> <br> <br>
+            <p>Dependant(s):</p>
+            <input type="text" id="dependantOneFirstName" placeholder="First Name (Dependant 1)">
+            <input type="text" id="dependantOneMiddleName" placeholder="Middle Name (Dependant 1)">
+            <input type="text" id="dependantOneLastName" placeholder="Last Name (Dependant 1)"> 
+            <input type="number" id="dependantOneAge" placeholder="Age (Dependant 1)" min="0" max="14"> <br> <br>
+            <input type="text" id="dependantTwoFirstName" placeholder="First Name (Dependant 2)">
+            <input type="text" id="dependantTwoMiddleName" placeholder="Middle Name (Dependant 2)">
+            <input type="text" id="dependantTwoLastName" placeholder="Last Name (Dependant 2)"> 
+            <input type="number" id="dependantTwoAge" placeholder="Age (Dependant 2)" min="0" max="14"> <br> <br>
+            <input type="text" id="dependantThreeFirstName" placeholder="First Name (Dependant 3)">
+            <input type="text" id="dependantThreeMiddleName" placeholder="Middle Name (Dependant 3)">
+            <input type="text" id="dependantThreeLastName" placeholder="Last Name (Dependant 3)">
+            <input type="number" id="dependantThreeAge" placeholder="Age (Dependant 3)" min="0" max="14"> <br> <br>
+            <p>Insurance:</p>
+            <input type="number" id="insuranceNumber" placeholder="Insurance Number" min="0"> <br> <br>
+            <p>User Type (Patient = 0, Employee = 1):</p>
+            <input type="number" id="userType" min="0" max="1"> <br> <br> <br>
+            <input type="submit" id="submitPatientBtn" value="Submit">
+
+        </form>
+    </body>
+</html>
