@@ -66,55 +66,60 @@
 
         <?php 
             $connection = pg_connect("host=ec2-52-21-136-176.compute-1.amazonaws.com
-            dbname=dae350stsd51e2 user=anbtnmsnsbhumz password= 7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137");
+            dbname=dae350stsd51e2 user=anbtnmsnsbhumz password=7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137");
 
             if(isset($_POST['submit'])){
-                //$property_agreementID = rand(8300,9500); 
-                $firstName = /*(string)*/ $_POST['userFirstName'];
-                $lastName = $_POST['userLastName'];
-                $middleName = $_POST['userMiddleName'];
-                $ssn = $_POST['ssn'];
-                $id = $_POST['id'];
-                $houseNumber = $_POST['houseNumber'];
-                $streetName = $_POST['streetName'];
-                $city = $_POST['city'];
-                $province = $_POST['province'];
-                //RADIO BUTTON FOR GENDER, FIGURE IT OUT
-                $gender = $_POST['genderSet'];
-                $age = $_POST['age'];
-                $emailAddress = $_POST['emailAddress'];
-                $phoneNumber = $_POST['phoneNumber'];
-                $birthDay = $_POST['birthDay'];
-                $birthMonth = $_POST['birthMonth'];
-                $birthYear = $_POST['birthYear'];
-                $dependantOneFirstName = $_POST['dependantOneFirstName'];
-                $dependantOneMiddleName = $_POST['dependantOneMiddleName'];
-                $dependantOneLastName = $_POST['dependantOneLastName'];
-                $dependantOneAge = $_POST['dependantOneAge'];
-                $dependantTwoFirstName = $_POST['dependantTwoFirstName'];
-                $dependantTwoMiddleName = $_POST['dependantTwoMiddleName'];
-                $dependantTwoLastName = $_POST['dependantTwoLastName'];
-                $dependantTwoAge = $_POST['dependantTwoAge'];
-                $dependantThreeFirstName = $_POST['dependantThreeFirstName'];
-                $dependantThreeMiddleName = $_POST['dependantThreeMiddleName'];
-                $dependantThreeLastName = $_POST['dependantThreeLastName'];
-                $dependantThreeAge = $_POST['dependantThreeAge'];
-                $insuranceNumber = $_POST['insuranceNumber'];
-                $userType = $_POST['userType'];
+                if($_POST['submit'] == 'Submit') {
+                    //$property_agreementID = rand(8300,9500); 
+                    $firstName = /*(string)*/ $_POST['userFirstName'];
+                    $lastName = $_POST['userLastName'];
+                    $middleName = $_POST['userMiddleName'];
+                    $ssn = $_POST['ssn'];
+                    $id = $_POST['id'];
+                    $houseNumber = $_POST['houseNumber'];
+                    $streetName = $_POST['streetName'];
+                    $city = $_POST['city'];
+                    $province = $_POST['province'];
+                    //RADIO BUTTON FOR GENDER, FIGURE IT OUT
+                    $gender = $_POST['genderSet'];
+                    $age = $_POST['age'];
+                    $emailAddress = $_POST['emailAddress'];
+                    $phoneNumber = $_POST['phoneNumber'];
+                    $birthDay = $_POST['birthDay'];
+                    $birthMonth = $_POST['birthMonth'];
+                    $birthYear = $_POST['birthYear'];
+                    $dependantOneFirstName = $_POST['dependantOneFirstName'];
+                    $dependantOneMiddleName = $_POST['dependantOneMiddleName'];
+                    $dependantOneLastName = $_POST['dependantOneLastName'];
+                    $dependantOneAge = $_POST['dependantOneAge'];
+                    $dependantTwoFirstName = $_POST['dependantTwoFirstName'];
+                    $dependantTwoMiddleName = $_POST['dependantTwoMiddleName'];
+                    $dependantTwoLastName = $_POST['dependantTwoLastName'];
+                    $dependantTwoAge = $_POST['dependantTwoAge'];
+                    $dependantThreeFirstName = $_POST['dependantThreeFirstName'];
+                    $dependantThreeMiddleName = $_POST['dependantThreeMiddleName'];
+                    $dependantThreeLastName = $_POST['dependantThreeLastName'];
+                    $dependantThreeAge = $_POST['dependantThreeAge'];
+                    $insuranceNumber = $_POST['insuranceNumber'];
+                    $userType = $_POST['userType'];
 
-                if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
-                    $queryOne = pg_query($connection, "insert into users values ($ssn, $houseNumber, $streetName, $city, $province, $firstName, $middleName, $lastName, $gender, $age, $insuranceNumber, $emailAddress, $birthDay, $birthMonth, $birthYear, $userType, $phoneNumber)"); //Insert Query
-                    
-                    /*if($userType == 0) {
-                        $queryTwo = pg_query($connection, "insert into patient values($id, $ssn, $dependantOneFirstName, $dependantOneMiddleName, $dependantOneLastName, $dependantTwoFirstName, $dependantTwoMiddleName, $dependantTwoLastName, $dependantThreeFirstName, $dependantThreeMiddleName, $dependantThreeLastName,)");
-                    }*/
+                    if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
+                        $queryOne = pg_query($connection, "insert into users values ($ssn, $houseNumber, $streetName, $city, $province, $firstName, $middleName, $lastName, $gender, $age, $insuranceNumber, $emailAddress, $birthDay, $birthMonth, $birthYear, $userType, $phoneNumber)"); //Insert Query
+                        
+                        /*if($userType == 0) {
+                            $queryTwo = pg_query($connection, "insert into patient values($id, $ssn, $dependantOneFirstName, $dependantOneMiddleName, $dependantOneLastName, $dependantTwoFirstName, $dependantTwoMiddleName, $dependantTwoLastName, $dependantThreeFirstName, $dependantThreeMiddleName, $dependantThreeLastName,)");
+                        }*/
 
-                    if($queryOne /*&& $queryTwo*/) {
-                        echo "<script type='text/javascript'>alert('Successfull!');</script>";
-                    }
-                } else {
-                    echo "<script type='text/javascript'>alert('fail');</script>";
-                } 
+                        if($queryOne /*&& $queryTwo*/) {
+                            echo "<script type='text/javascript'>alert('Successfull!');</script>";
+                        }
+                    } else {
+                        echo "<script type='text/javascript'>alert('fail');</script>";
+                    } 
+                
+                
+                }
+                
             } 
         ?>
     </body>
