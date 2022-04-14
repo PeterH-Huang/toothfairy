@@ -105,9 +105,9 @@
                 if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
                     $queryOne = pg_query($connection, "insert into users values ($ssn, $houseNumber, $streetName, $city, $province, $firstName, $middleName, $lastName, $gender, $age, $insuranceNumber, $emailAddress, $birthDay, $birthMonth, $birthYear, $userType, $phoneNumber)"); //Insert Query
                     
-                    if($userType == 0) {
+                    /*if($userType == 0) {
                         $queryTwo = pg_query($connection, "insert into patient values($id, $ssn, $dependantOneFirstName, $dependantOneMiddleName, $dependantOneLastName, $dependantTwoFirstName, $dependantTwoMiddleName, $dependantTwoLastName, $dependantThreeFirstName, $dependantThreeMiddleName, $dependantThreeLastName,)");
-                    }
+                    }*/
 
                     if($queryOne && $queryTwo) {
                         echo "<script type='text/javascript'>alert('Successfull!');</script>";
