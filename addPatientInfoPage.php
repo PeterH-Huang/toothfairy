@@ -29,12 +29,13 @@
             <input type="text" id="city" placeholder="City">
             <input type="text" id="province" placeholder="Province"> <br> <br>
             <p>Gender and Age:</p>
-            <input type="radio" name="genderSet" id="genderMale" value="Male">
+            <!--<input type="radio" name="genderSet" id="genderMale" value="Male">
             <label for="genderMale">Male</label>
             <input type="radio" name="genderSet" id="genderFemale" value="Female">
             <label for="genderFemale">Female</label>
             <input type="radio" name="genderSet" id="genderOther" value="Other">
-            <label for="genderOther">Other</label> <br> <br>
+            <label for="genderOther">Other</label>-->
+            <input type="text" id="gender" placeholder="Gender"> <br> <br>
             <input type="number" id="age" placeholder="Age" min="15"> <br> <br>
             <p>Contact Information:</p>
             <input type="email" id="emailAddress" placeholder="Email Address">
@@ -81,7 +82,7 @@
                     $city = $_POST['city'];
                     $province = $_POST['province'];
                     //RADIO BUTTON FOR GENDER, FIGURE IT OUT
-                    $gender = $_POST['genderSet'];
+                    $gender = $_POST['gender'];
                     $age = (int) $_POST['age'];
                     $emailAddress = $_POST['emailAddress'];
                     $phoneNumber = $_POST['phoneNumber'];
