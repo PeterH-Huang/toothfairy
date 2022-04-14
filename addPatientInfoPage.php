@@ -17,17 +17,17 @@
         </div> <br>
         <form autocomplete="off">
             <p>Full Name:</p>
-            <input type="text" id="firstName" placeholder="First Name">
-            <input type="text" id="middleName" placeholder="Middle Name">
-            <input type="text" id="lastName" placeholder="Last Name"> <br> <br>
+            <input type="text" id="firstName" name="firstName" placeholder="First Name">
+            <input type="text" id="middleName" name="middleName" placeholder="Middle Name">
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name"> <br> <br>
             <p>Identification:</p>
-            <input type="number" id="SSN" placeholder="SSN">
-            <input type="number" id="ID" placeholder="ID"> <br> <br>
+            <input type="number" id="SSN" name="SSN" placeholder="SSN">
+            <input type="number" id="ID" name="ID" placeholder="ID"> <br> <br>
             <p>Address:</p>
-            <input type="number" id="houseNumber" placeholder="House Number">
-            <input type="text" id="streetName" placeholder="Street Name">
-            <input type="text" id="city" placeholder="City">
-            <input type="text" id="province" placeholder="Province"> <br> <br>
+            <input type="number" id="houseNumber" name="houseNumber" placeholder="House Number">
+            <input type="text" id="streetName" name="streetName" placeholder="Street Name">
+            <input type="text" id="city" name="city" placeholder="City">
+            <input type="text" id="province" name="province" placeholder="Province"> <br> <br>
             <p>Gender and Age:</p>
             <!--<input type="radio" name="genderSet" id="genderMale" value="Male">
             <label for="genderMale">Male</label>
@@ -35,33 +35,33 @@
             <label for="genderFemale">Female</label>
             <input type="radio" name="genderSet" id="genderOther" value="Other">
             <label for="genderOther">Other</label>-->
-            <input type="text" id="gender" placeholder="Gender"> <br> <br>
-            <input type="number" id="age" placeholder="Age" min="15"> <br> <br>
+            <input type="text" id="gender" name="gender" placeholder="Gender"> <br> <br>
+            <input type="number" id="age" name="age" placeholder="Age" min="15"> <br> <br>
             <p>Contact Information:</p>
-            <input type="email" id="emailAddress" placeholder="Email Address">
-            <input type="text" id="phoneNumber" placeholder="Phone Number (No Dashes)"> <br> <br>
+            <input type="email" id="emailAddress" name="emailAddress" placeholder="Email Address">
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number (No Dashes)"> <br> <br>
             <p>Birth Date:</p>
-            <input type="number" id="birthDay" min="1" max="31" placeholder="Birth Day"> 
-            <input type="number" id="birthMonth" min="1" max="12" placeholder="Birth Month">
-            <input type="number" id="birthYear" placeholder="Birth Year"> <br> <br>
+            <input type="number" id="birthDay" name="birthDay" min="1" max="31" placeholder="Birth Day"> 
+            <input type="number" id="birthMonth" name="birthMonth" min="1" max="12" placeholder="Birth Month">
+            <input type="number" id="birthYear" name="birthYear" placeholder="Birth Year"> <br> <br>
             <p>Dependant(s):</p>
-            <input type="text" id="dependantOneFirstName" placeholder="First Name (Dependant 1)">
-            <input type="text" id="dependantOneMiddleName" placeholder="Middle Name (Dependant 1)">
-            <input type="text" id="dependantOneLastName" placeholder="Last Name (Dependant 1)"> 
-            <input type="number" id="dependantOneAge" placeholder="Age (Dependant 1)" min="0" max="14"> <br> <br>
-            <input type="text" id="dependantTwoFirstName" placeholder="First Name (Dependant 2)">
-            <input type="text" id="dependantTwoMiddleName" placeholder="Middle Name (Dependant 2)">
-            <input type="text" id="dependantTwoLastName" placeholder="Last Name (Dependant 2)"> 
-            <input type="number" id="dependantTwoAge" placeholder="Age (Dependant 2)" min="0" max="14"> <br> <br>
-            <input type="text" id="dependantThreeFirstName" placeholder="First Name (Dependant 3)">
-            <input type="text" id="dependantThreeMiddleName" placeholder="Middle Name (Dependant 3)">
-            <input type="text" id="dependantThreeLastName" placeholder="Last Name (Dependant 3)">
-            <input type="number" id="dependantThreeAge" placeholder="Age (Dependant 3)" min="0" max="14"> <br> <br>
+            <input type="text" id="dependantOneFirstName" name="dependantOneFirstName" placeholder="First Name (Dependant 1)">
+            <input type="text" id="dependantOneMiddleName" name="dependantOneMiddleName" placeholder="Middle Name (Dependant 1)">
+            <input type="text" id="dependantOneLastName" name="dependantOneLastName" placeholder="Last Name (Dependant 1)"> 
+            <input type="number" id="dependantOneAge" name="dependantOneAge" placeholder="Age (Dependant 1)" min="0" max="14"> <br> <br>
+            <input type="text" id="dependantTwoFirstName" name="dependantTwoFirstName" placeholder="First Name (Dependant 2)">
+            <input type="text" id="dependantTwoMiddleName" name="dependantTwoMiddleName" placeholder="Middle Name (Dependant 2)">
+            <input type="text" id="dependantTwoLastName" name="dependantTwoLastName" placeholder="Last Name (Dependant 2)"> 
+            <input type="number" id="dependantTwoAge" name="dependantTwoAge" placeholder="Age (Dependant 2)" min="0" max="14"> <br> <br>
+            <input type="text" id="dependantThreeFirstName" name="dependantThreeFirstName" placeholder="First Name (Dependant 3)">
+            <input type="text" id="dependantThreeMiddleName" name="dependantThreeMiddleName" placeholder="Middle Name (Dependant 3)">
+            <input type="text" id="dependantThreeLastName" name="dependantThreeLastName" placeholder="Last Name (Dependant 3)">
+            <input type="number" id="dependantThreeAge" name="dependantThreeAge" placeholder="Age (Dependant 3)" min="0" max="14"> <br> <br>
             <p>Insurance:</p>
-            <input type="number" id="insuranceNumber" placeholder="Insurance Number" min="0"> <br> <br>
+            <input type="number" id="insuranceNumber" name="insuranceNumber" placeholder="Insurance Number" min="0"> <br> <br>
             <p>User Type (Patient = 0, Employee = 1):</p>
-            <input type="number" id="userType" min="0" max="1"> <br> <br> <br>
-            <input type="submit" id="submit" value="Submit">
+            <input type="number" id="userType" name="userType" min="0" max="1"> <br> <br> <br>
+            <input type="submit" id="submit" name="submit" value="submit">
 
         </form>
 
@@ -70,7 +70,7 @@
             dbname=dae350stsd51e2 user=anbtnmsnsbhumz password=7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137");
 
             if(isset($_POST['submit'])){
-                if($_POST['submit'] == 'Submit') {
+                //if($_POST['submit'] == 'Submit') {
                     //$property_agreementID = rand(8300,9500); 
                     $firstName = /*(string)*/ $_POST['userFirstName'];
                     $lastName = $_POST['userLastName'];
@@ -119,7 +119,7 @@
                     //} 
                 
                 
-                }
+                //}
                 
             } 
         ?>
