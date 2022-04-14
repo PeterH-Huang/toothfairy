@@ -2,7 +2,16 @@
 /* This takes in data needed to add an appoitment, also randomly generates a integer to be
 added as appoitmentID, appoitmentPatientID, and appoitmentEmployeeID.
 Still needs testing */
-$link = mysqli_connect("5432", "anbtnmsnsbhumz", "7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137", "ec2-52-21-136-176.compute-1.amazonaws.com");
+//Get Heroku ClearDB connection information
+$cleardb_url = parse_url(getenv("ec2-52-21-136-176.compute-1.amazonaws.com"));
+$cleardb_server = $cleardb_url["5432"];
+$cleardb_username = $cleardb_url["anbtnmsnsbhumz"];
+$cleardb_password = $cleardb_url["7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137"];
+$cleardb_db = substr($cleardb_url["ec2-52-21-136-176.compute-1.amazonaws.com"],1);
+$active_group = 'default';
+$query_builder = TRUE;
+// Connect to DB
+$link = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
  
 // Check connection
 if($link === false){

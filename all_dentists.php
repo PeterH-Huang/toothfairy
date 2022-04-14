@@ -1,12 +1,16 @@
 <?php
 
-$servername = "5432";
-$username = "anbtnmsnsbhumz";
-$password = "7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137";
-$dbname = "ec2-52-21-136-176.compute-1.amazonaws.com";
+//Get Heroku ClearDB connection information
+$cleardb_url = parse_url(getenv("ec2-52-21-136-176.compute-1.amazonaws.com"));
+$cleardb_server = $cleardb_url["5432"];
+$cleardb_username = $cleardb_url["anbtnmsnsbhumz"];
+$cleardb_password = $cleardb_url["7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137"];
+$cleardb_db = substr($cleardb_url["ec2-52-21-136-176.compute-1.amazonaws.com"],1);
+$active_group = 'default';
+$query_builder = TRUE;
+// Connect to DB
+$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
