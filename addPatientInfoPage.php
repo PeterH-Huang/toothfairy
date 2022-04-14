@@ -60,7 +60,7 @@
             <input type="number" id="insuranceNumber" placeholder="Insurance Number" min="0"> <br> <br>
             <p>User Type (Patient = 0, Employee = 1):</p>
             <input type="number" id="userType" min="0" max="1"> <br> <br> <br>
-            <input type="submit" id="submitPatientBtn" value="Submit">
+            <input type="submit" id="submit" value="Submit">
 
         </form>
 
