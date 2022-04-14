@@ -74,34 +74,34 @@
                     $firstName = /*(string)*/ $_POST['userFirstName'];
                     $lastName = $_POST['userLastName'];
                     $middleName = $_POST['userMiddleName'];
-                    $ssn = $_POST['ssn'];
-                    $id = $_POST['id'];
-                    $houseNumber = $_POST['houseNumber'];
+                    $ssn = (int) $_POST['ssn'];
+                    $id = (int) $_POST['id'];
+                    $houseNumber = (int) $_POST['houseNumber'];
                     $streetName = $_POST['streetName'];
                     $city = $_POST['city'];
                     $province = $_POST['province'];
                     //RADIO BUTTON FOR GENDER, FIGURE IT OUT
                     $gender = $_POST['genderSet'];
-                    $age = $_POST['age'];
+                    $age = (int) $_POST['age'];
                     $emailAddress = $_POST['emailAddress'];
                     $phoneNumber = $_POST['phoneNumber'];
-                    $birthDay = $_POST['birthDay'];
-                    $birthMonth = $_POST['birthMonth'];
-                    $birthYear = $_POST['birthYear'];
+                    $birthDay = (int) $_POST['birthDay'];
+                    $birthMonth = (int) $_POST['birthMonth'];
+                    $birthYear = (int) $_POST['birthYear'];
                     $dependantOneFirstName = $_POST['dependantOneFirstName'];
                     $dependantOneMiddleName = $_POST['dependantOneMiddleName'];
                     $dependantOneLastName = $_POST['dependantOneLastName'];
-                    $dependantOneAge = $_POST['dependantOneAge'];
+                    $dependantOneAge = (int) $_POST['dependantOneAge'];
                     $dependantTwoFirstName = $_POST['dependantTwoFirstName'];
                     $dependantTwoMiddleName = $_POST['dependantTwoMiddleName'];
                     $dependantTwoLastName = $_POST['dependantTwoLastName'];
-                    $dependantTwoAge = $_POST['dependantTwoAge'];
+                    $dependantTwoAge = (int) $_POST['dependantTwoAge'];
                     $dependantThreeFirstName = $_POST['dependantThreeFirstName'];
                     $dependantThreeMiddleName = $_POST['dependantThreeMiddleName'];
                     $dependantThreeLastName = $_POST['dependantThreeLastName'];
-                    $dependantThreeAge = $_POST['dependantThreeAge'];
-                    $insuranceNumber = $_POST['insuranceNumber'];
-                    $userType = $_POST['userType'];
+                    $dependantThreeAge = (int) $_POST['dependantThreeAge'];
+                    $insuranceNumber = (int) $_POST['insuranceNumber'];
+                    $userType = (int) $_POST['userType'];
 
                     //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
                         $queryOne = pg_query($connection, "insert into users values ($ssn, $houseNumber, $streetName, $city, $province, $firstName, $middleName, $lastName, $gender, $age, $insuranceNumber, $emailAddress, $birthDay, $birthMonth, $birthYear, $userType, $phoneNumber)"); //Insert Query
