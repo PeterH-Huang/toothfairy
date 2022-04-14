@@ -109,7 +109,7 @@
                         $queryTwo = pg_query($connection, "insert into patient values($id, $ssn, $dependantOneFirstName, $dependantOneMiddleName, $dependantOneLastName, $dependantTwoFirstName, $dependantTwoMiddleName, $dependantTwoLastName, $dependantThreeFirstName, $dependantThreeMiddleName, $dependantThreeLastName,)");
                     }*/
 
-                    if($queryOne && $queryTwo) {
+                    if($queryOne /*&& $queryTwo*/) {
                         echo "<script type='text/javascript'>alert('Successfull!');</script>";
                     }
                 } else {
