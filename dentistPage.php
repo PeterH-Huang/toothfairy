@@ -23,7 +23,7 @@
     <br>
 
     <div class="form">
-        <form action="appointments.html" method="get">
+        <form action="appointments.php" method="get">
             <label for="dentistID">Dentist ID: </label>
             <input type="text" id="dentistID" name="dentistID" placeholder="XXXX"><br><br>
             <p>Date</p>
@@ -38,8 +38,7 @@
     </div>
     <br>
     
-
-    <input type="submit" name="listDentists" value="List aLL Dentists" />
+    <input type="submit" name="listDentists" value="List all Dentists" />
 
     <div class="space">
     </div>
