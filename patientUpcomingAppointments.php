@@ -20,7 +20,7 @@
         <div class="welcome" id="welcome">
         <form method="post">
             <input type="text" name="patientID"><br>
-            <input type="submit" id="submit" name="confirm" value="submit">
+            <input type="submit" id="submit" name="submit" value="submit">
         </form>
         </div>
 
