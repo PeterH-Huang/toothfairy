@@ -67,6 +67,11 @@ form{
     color: black;
 }
 
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #button {
     border-width: 1px;
     border-radius: 10px;

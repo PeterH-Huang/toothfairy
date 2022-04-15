@@ -43,13 +43,11 @@
     </div>
     <br>
 
+    <div class="center">
     <input type="submit" name="listDentists" value="List all Dentists" />
-
-    <div class="space">
-    </div>
-     
-
+    <br>
     <input type="submit" name="listprocedure" value="Lists all Procedures" />
+    </div>
 
         
     <?php
