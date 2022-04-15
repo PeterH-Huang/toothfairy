@@ -22,8 +22,8 @@
             <input type="text" id="userMiddleName" name="userMiddleName" placeholder="Middle Name">
             <input type="text" id="userLastName" name="userLastName" placeholder="Last Name"> <br> <br>
             <p>Identification:</p>
-            <input type="text" id="SSN" name="SSN" placeholder="SSN">
-            <input type="text" id="ID" name="ID" placeholder="ID"> <br> <br>
+            <input type="text" id="ssn" name="ssn" placeholder="SSN">
+            <input type="text" id="id" name="id" placeholder="ID"> <br> <br>
             <p>Address:</p>
             <input type="text" id="houseNumber" name="houseNumber" placeholder="House Number">
             <input type="text" id="streetName" name="streetName" placeholder="Street Name">
@@ -59,7 +59,7 @@
             <input type="text" id="dependantThreeLastName" name="dependantThreeLastName" placeholder="Last Name (Dependant 3)">
             <input type="text" id="dependantThreeAge" name="dependantThreeAge" placeholder="Age (Dependant 3)"> <br> <br>
             <p>Insurance:</p>
-            <input type="text" id="insuranceNumber" name="insuranceNumber" placeholder="Insurance Number" min="0"> <br> <br>
+            <input type="text" id="insuraceNumber" name="insuraceNumber" placeholder="Insurance Number" min="0"> <br> <br>
             <p>User Type (Patient = 0, Employee = 1):</p>
             <input type="text" id="userType" name="userType"> <br> <br> <br>
             <input type="submit" id="submit" name="confirm" value="submit">
@@ -106,7 +106,7 @@
                     $dependantThreeMiddleName = $_POST['dependantThreeMiddleName'];
                     $dependantThreeLastName = $_POST['dependantThreeLastName'];
                     $dependantThreeAge = (int) $_POST['dependantThreeAge'];*/
-                    $insuracenumber = (int) $_POST['insuranceNumber'];
+                    $insuracenumber = (int) $_POST['insuraceNumber'];
                     $usertype = (int) $_POST['userType'];
 
                     //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
