@@ -39,7 +39,7 @@
             <input type="text" id="gender" name="gender" placeholder="Gender"> <br> <br>
             <input type="text" id="age" name="age" placeholder="Age"> <br> <br>
             <p>Contact Information:</p>
-            <input type="email" id="emailAddress" name="emailAddress" placeholder="Email Address">
+            <input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address">
             <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number (No Dashes)"> <br> <br>
             <p>Birth Date:</p>
             <input type="text" id="birthDay" name="birthDay" placeholder="Birth Day"> 
