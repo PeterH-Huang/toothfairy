@@ -18,9 +18,9 @@
         </div> <br>
         <form method="post" autocomplete="off">
             <p>Full Name:</p>
-            <input type="text" id="firstName" name="firstName" placeholder="First Name">
-            <input type="text" id="middleName" name="middleName" placeholder="Middle Name">
-            <input type="text" id="lastName" name="lastName" placeholder="Last Name"> <br> <br>
+            <input type="text" id="userFirstName" name="userFirstName" placeholder="First Name">
+            <input type="text" id="userMiddleName" name="userMiddleName" placeholder="Middle Name">
+            <input type="text" id="userLastName" name="userLastName" placeholder="Last Name"> <br> <br>
             <p>Identification:</p>
             <input type="text" id="SSN" name="SSN" placeholder="SSN">
             <input type="text" id="ID" name="ID" placeholder="ID"> <br> <br>
