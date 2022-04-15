@@ -76,9 +76,7 @@
              }
 
             if(isset($_POST['confirm'])){
-                    echo "MADE IT";
-                //if($_POST['submit'] == 'Submit') {
-                    //$property_agreementID = rand(8300,9500); 
+                    echo "MADE IT"; 
                     $userfirstName = /*(string)*/ $_POST['userFirstName'];
                     $userLastName = $_POST['userLastName'];
                     $userMiddleName = $_POST['userMiddleName'];
