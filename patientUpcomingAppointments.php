@@ -41,7 +41,7 @@
                     $patientID = /*(string)*/ $_POST['patientID'];
                     
                     //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
-                    $queryOne = pg_query($connection, "select * From records WHERE appointmentpatientid = $patientID");
+                    $queryOne = pg_query($connection, "SELECT * FROM records WHERE appointmentpatientid = $patientID");
                     
                     
                      
