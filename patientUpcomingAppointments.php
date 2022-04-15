@@ -58,7 +58,7 @@
                             echo "<th>Room Number:</th>";
                             echo "</tr>";
                             echo "<tr>";
-                            echo "<td> <p align=center>$row[1] </p></td>";
+                            echo "<td> <p align=center>$row[0] </p></td>";
                             echo "<td> <p align=center>$row[2] </p></td>";
                             echo "<td> <p align=center>$row[3] </p></td>";
                             echo "<td> <p align=center>$row[4] </p></td>";
