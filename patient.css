@@ -25,6 +25,13 @@ body {
     color: azure;
 }
 
+.history {
+    text-align: center;
+    font-family: "Work Sans";
+    font-size: 14px;
+}
+
+
 #button {
     border-width: 1px;
     border-radius: 10px;
