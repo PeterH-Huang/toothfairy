@@ -77,10 +77,10 @@
             if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo "id: " . $row["employeeBranchID"]. " - employeeType: " . $row["employeeType"]. "<br>";
+                    echo "<div>". "id: " . $row["employeeBranchID"]. " - employeeType: " . $row["employeeType"]. "</div>";
                 }
             } else {
-                echo "0 results";
+                echo "<div>". "0 results". "</div>";
             }
             $conn->close();  
         }
