@@ -110,8 +110,12 @@
                     $userType = (int) $_POST['userType'];
 
                     //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
-                    //$queryOne = pg_query($connection, "insert into users values ('$ssn', '$houseNumber', '$streetName', '$city', '$province', '$userFirstName', '$userMiddleName', '$userLastName', '$gender', '$age', '$insuranceNumber', '$emailAddress', '$birthDay', '$birthMonth', '$birthYear', '$userType', '$phoneNumber');"); //Insert Query
-                    $queryOne = pg_query($connection, "insert into users values ('123', '59', 'something', 'OTT', 'ON', 'soy', 'el', 'mur', 'male', '22', '202', 'smu@hotmail.com', '01', 'mar', '2000', '1', '6225554321');"); //Insert Query
+                    $queryOne = pg_query($connection, "insert into users(
+                        patientid, patientssn, patientdependantonefirstname, patientdependantonemiddlename, 
+                        patientdependantonelastname, patientdependanttwofirstname, patientdependanttwomiddlename, 
+                        patientdependanttwolastname, patientdependantthreefirstname, patientdependantthreemiddlename, 
+                        patientdependantthreelastname) values ('$ssn', '$houseNumber', '$streetName', '$city', '$province', '$userFirstName', '$userMiddleName', '$userLastName', '$gender', '$age', '$insuranceNumber', '$emailAddress', '$birthDay', '$birthMonth', '$birthYear', '$userType', '$phoneNumber');"); //Insert Query
+                    //$queryOne = pg_query($connection, "insert into users values ('123', '59', 'something', 'OTT', 'ON', 'soy', 'el', 'mur', 'male', '22', '202', 'smu@hotmail.com', '01', 'mar', '2000', '1', '6225554321');"); //Insert Query
     
                         /*if($userType == 0) {
                             $queryTwo = pg_query($connection, "insert into patient values($id, $ssn, $dependantOneFirstName, $dependantOneMiddleName, $dependantOneLastName, $dependantTwoFirstName, $dependantTwoMiddleName, $dependantTwoLastName, $dependantThreeFirstName, $dependantThreeMiddleName, $dependantThreeLastName,)");
