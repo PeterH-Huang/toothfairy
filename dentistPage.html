@@ -42,8 +42,6 @@
         <input type="submit" name="listprocedure" value="Lists all Procedures" />
     </form>
         
-    //THIS PHP COPDE TAKES CARE OF LISTING ALL DENTISTS IF THE "LIST ALL DENTISTS" BUTTON IS CLICKED
-    //STILL NEED TESTING!
     <?php
         if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['listDentists']))
         {
@@ -84,8 +82,6 @@
             $conn->close();  
         }
     
-    
-        //This will if the button is pushed list all the procedures along with employeID and BranchID
         if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['listprocedure']))
         {
              func1();
@@ -125,13 +121,7 @@
 
             $conn->close(); 
         }
-    
-    
-        //THIS PHP CODE TAKES CARE OF RETURNING THE APPOITMENTS FROM TODAY BASED ON USER INPUT
-        //NOTE* THE WAY IN WHIHC THE DATE IS ENTERED MEANS I CONVERTED IT INTO AN ARRAY AND THEN SEPERATED IT INTO A STRING BEASED ON A '/' BEING 
-        //BETWEEEN EACH DD/MM/YYYY. MAY CAUSE ISSUES IF DATES NOT ENTERED CORRECTLY
-    
-
+   
         //Get Heroku ClearDB connection information
         $cleardb_url = parse_url(getenv("ec2-52-21-136-176.compute-1.amazonaws.com"));
         $cleardb_server = $cleardb_url["5432"];
