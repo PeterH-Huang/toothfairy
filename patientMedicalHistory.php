@@ -52,7 +52,7 @@
                             echo "<td> <p align=center>$row[4] </p></td>";
                             echo "<td> <p align=center>$row[5] </p></td>";
                             echo "</tr>";
-                            echo "</table>"
+                            echo "</table>";
                         }
                     
                     }
