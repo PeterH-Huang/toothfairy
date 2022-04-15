@@ -45,8 +45,8 @@
                                  <p>Your Medical History:</p>
                                  <br></div>";
                             echo"<div class='history' id='history'>";
-                            echo "<h3>ID</h3>";
-                            echo "<p align=center>$row[0] </p>";
+                            echo "<h3>ID:</h3>";
+                            echo "<h3 align=center>$row[0] </h3>";
                             echo "<table class = 'center'>";
                             echo "<th>Procedure(s)</th>";
                             echo "<tr><td> <p align=center>$row[1] </p></td></tr>";
