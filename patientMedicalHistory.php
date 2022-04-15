@@ -39,12 +39,12 @@
                     $patientID = /*(string)*/ $_POST['patientID'];
                     
                     //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
-                    $queryOne = pg_query($connection, "select * From records WHERE recordpatientid = $patientID")
+                    $queryOne = pg_query($connection, "select * From records WHERE recordpatientid = $patientID");
                     
                     
                      
                     if($queryOne) {
-                        echo $queryOne
+                        echo $queryOne;
                         echo "Done!";
                     }
     
