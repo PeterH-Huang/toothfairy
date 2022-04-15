@@ -23,20 +23,161 @@
     <br>
 
     <div class="form">
-        <form action="appointments.php" method="get">
+        <form action="appointments.html" method="get">
             <label for="dentistID">Dentist ID: </label>
             <input type="text" id="dentistID" name="dentistID" placeholder="XXXX"><br><br>
-            <p> Date</p>
-            <label for="dateDay">Day:</label>
-            <input type="text" id="dateDay" name="dateDay" placeholder="XX"><br><br>
-            <label for="dateMonth">Month:</label>
-            <input type="text" id="dateMonth" name="dateMonth" placeholder="abc"><br><br>
-            <label for="dateYear">Year:</label>
-            <input type="text" id="dateYear" name="dateYear" placeholder="XXXX"><br><br>
+            <label for="date">Date:</label>
+            <input type="text" id="date" name="date" placeholder="DD/MM/YYYY"><br><br>
             <input type="submit" value="Submit">
         </form>
     </div>
+    <br>
+    
+    <form action="appointments.html" method="post">
+        <input type="submit" name="listDentists" value="List aLL Dentists" />
+    </form>
+    <br>
+     
+    <form action="appointments.html" method="post">
+        <input type="submit" name="listprocedure" value="Lists all Procedures" />
+    </form>
+        
+    //THIS PHP COPDE TAKES CARE OF LISTING ALL DENTISTS IF THE "LIST ALL DENTISTS" BUTTON IS CLICKED
+    //STILL NEED TESTING!
+    <?php
+        if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['listDentists']))
+        {
+             func();
+         }
+        function func()
+        {
+            //Get Heroku ClearDB connection information
+            $cleardb_url = parse_url(getenv("ec2-52-21-136-176.compute-1.amazonaws.com"));
+            $cleardb_server = $cleardb_url["5432"];
+            $cleardb_username = $cleardb_url["anbtnmsnsbhumz"];
+            $cleardb_password = $cleardb_url["7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137"];
+            $cleardb_db = substr($cleardb_url["ec2-52-21-136-176.compute-1.amazonaws.com"],1);
+            $active_group = 'default';
+            $query_builder = TRUE;
+        
+            // Connect to DB
+            $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 
+            // Check connection
+            if ($conn->connect_error) {
+               die("Connection failed: " . $conn->connect_error);
+            }
+
+            //Gets the employeeBranchID and the employeetype when it is equal to dentist displaying the employeeBranchID and all dentists across all branches
+            //Can use BranchID to get names if necessary
+            $sql = "SELECT employeeBranchID, employeeType FROM employee WHERE employeeType = 'dentist'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "id: " . $row["employeeBranchID"]. " - employeeType: " . $row["employeeType"]. "<br>";
+                }
+            } else {
+                echo "0 results";
+            }
+            $conn->close();  
+        }
+    ?>
+    
+    //This will if the button is pushed list all the procedures along with employeID and BranchID
+    <?php
+        if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['listprocedure']))
+        {
+             func1();
+        }
+        function func1()
+        {
+            //Get Heroku ClearDB connection information
+            $cleardb_url = parse_url(getenv("ec2-52-21-136-176.compute-1.amazonaws.com"));
+            $cleardb_server = $cleardb_url["5432"];
+            $cleardb_username = $cleardb_url["anbtnmsnsbhumz"];
+            $cleardb_password = $cleardb_url["7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137"];
+            $cleardb_db = substr($cleardb_url["ec2-52-21-136-176.compute-1.amazonaws.com"],1);
+            $active_group = 'default';
+            $query_builder = TRUE;
+        
+            // Connect to DB
+            $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+
+            // Check connection
+            if ($conn->connect_error) {
+               die("Connection failed: " . $conn->connect_error);
+            }
+
+            //Gets the employeeBranchID and the employeetype when it is equal to dentist displaying the employeeBranchID and all dentists across all branches
+            //Can use BranchID to get names if necessary
+            $sql = "SELECT employeeID, employeeBranchID, verifiedProcedureOne, verifiedProcedureTwo, verifiedProcedureThree FROM employee WHERE employeeType = 'dentist'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "Employee id: " . $row["employeeID"]. "Branch id: " . $row["employeeBranchID"]. " - verifiedProcedureOne: " . $row["verifiedProcedureOne"]." - verifiedProcedureTwo: " . $row["verifiedProcedureTwo"]." - verifiedProcedureThree: " . $row["verifiedProcedureThree"]. "<br>";
+                }
+            } else {
+                echo "0 results";
+            } 
+
+            $conn->close(); 
+        }
+    ?>
+    
+    //THIS PHP CODE TAKES CARE OF RETURNING THE APPOITMENTS FROM TODAY BASED ON USER INPUT
+    //NOTE* THE WAY IN WHIHC THE DATE IS ENTERED MEANS I CONVERTED IT INTO AN ARRAY AND THEN SEPERATED IT INTO A STRING BEASED ON A '/' BEING 
+    //BETWEEEN EACH DD/MM/YYYY. MAY CAUSE ISSUES IF DATES NOT ENTERED CORRECTLY
+    <?php
+
+        //Get Heroku ClearDB connection information
+        $cleardb_url = parse_url(getenv("ec2-52-21-136-176.compute-1.amazonaws.com"));
+        $cleardb_server = $cleardb_url["5432"];
+        $cleardb_username = $cleardb_url["anbtnmsnsbhumz"];
+        $cleardb_password = $cleardb_url["7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137"];
+        $cleardb_db = substr($cleardb_url["ec2-52-21-136-176.compute-1.amazonaws.com"],1);
+        $active_group = 'default';
+        $query_builder = TRUE;
+        
+        // Connect to DB
+        $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $date=$_GET["date"];
+
+        $id=$_GET["dentistID"];
+
+        $dateHolder=(explode("/",$date));
+
+        //Splits the entered date given as DD/MM/YYYY into individual strings in order to be used in searching the DB
+        $day= $dateHolder[0].$dateHolder[1];
+        $month=$dateHolder[3].$dateHolder[4];
+        $year=$dateHolder[6].$dateHolder[7].$dateHolder[8].$dateHolder[9];
+
+        //Gets the employeeBranchID and the employeetype when it is equal to dentist displaying the employeeBranchID and all dentists across all branches
+        //Can use BranchID to get names if necessary
+        $sql = "SELECT appointmentEmployeeID, startTime, endTime, appointmentType,  appointmentStatus, roomAssigned
+         FROM appointment WHERE appointmentEmployeeID='.$id.' AND appointmentStatus != '0' AND appointmentDateDay = '$day' AND appointmentDateMonth= '$month' AND appointmentDateYear = '$year'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+            echo "id: " . $row["appointmentEmployeeID"]. " - startTime: " . $row["startTime"]. " - endTime: " . $row["endTime"]. " - appointmentType: " . $row["appointmentType"]. " - appointmentStatus: " . $row["appointmentStatus"]." - roomAssigned: " . $row["roomAssigned"]. "<br>";
+        }
+        } else {
+            echo "0 results";
+        }
+        $conn->close();
+    ?>
 
     </body>
+    
 </html>
