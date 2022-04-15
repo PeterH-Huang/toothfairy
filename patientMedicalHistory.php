@@ -44,7 +44,7 @@
                             echo"<div class='welcome' id='welcome'>
                                  <p>Your Medical History:</p>
                                  <br></div>";
-                            echo"<div class='history' id='history'>"
+                            echo"<div class='history' id='history'>";
                             echo "<h3>ID</h3>";
                             echo "<p align=center>$row[0] </p>";
                             echo "<table>";
