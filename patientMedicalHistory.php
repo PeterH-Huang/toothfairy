@@ -41,7 +41,7 @@
                     
                     $query = pg_query("SELECT * FROM records WHERE recordpatientid = '$patientID'");
                     if(pg_num_rows($query) == 1){
-                        $result = pg_query($connection, "SELECT recordid, previousprocedureone,previousproceduretwo,previousprocedurethree,previousprocedurefour,previousprocedurefive FROM records WHERE recordpatientid = '$record'");
+                        $result = pg_query($connection, "SELECT recordid, previousprocedureone,previousproceduretwo,previousprocedurethree,previousprocedurefour,previousprocedurefive FROM records WHERE recordpatientid = '$patientID'");
                         while ($row = pg_fetch_row($result)){
                             echo "<table>";
                             echo "<tr>";
@@ -59,8 +59,8 @@
                     
                     
                      
-                    if($queryOne) {
-                        echo $queryOne;
+                    if($query) {
+                        echo $query;
                         echo "Done!";
                     }
     
