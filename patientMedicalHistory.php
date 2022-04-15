@@ -39,7 +39,7 @@
                     echo "MADE IT"; 
                     $patientID = /*(string)*/ $_POST['patientID'];
                     
-                    $queryOne = pg_query($connection, "select * From records WHERE recordpatientid = $patientID");
+                    $queryOne = pg_query($connection, "SELECT * FROM records WHERE recordpatientid = $patientID");
                     
                     
                      
