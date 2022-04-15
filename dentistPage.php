@@ -36,7 +36,8 @@
     <form action="appointments.html" method="post">
         <input type="submit" name="listDentists" value="List aLL Dentists" />
     </form>
-    <br>
+    <div class="space">
+    </div>
      
     <form action="appointments.html" method="post">
         <input type="submit" name="listprocedure" value="Lists all Procedures" />
