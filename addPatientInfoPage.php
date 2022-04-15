@@ -94,7 +94,7 @@
                     $emailAddress = $_POST['emailAddress'];
                     $phoneNumber = $_POST['phoneNumber'];
                     $birthDay = (int) $_POST['birthDay'];
-                    $birthMonth = (int) $_POST['birthMonth'];
+                    $birthMonth = $_POST['birthMonth'];
                     $birthYear = (int) $_POST['birthYear'];
                     /*$dependantOneFirstName = $_POST['dependantOneFirstName'];
                     $dependantOneMiddleName = $_POST['dependantOneMiddleName'];
