@@ -88,7 +88,7 @@
 
                     //if($appointmentProcedureID != null && $appointmentProcedurePatientID != null && $appointmentProcedureDateDay != null && $appointmentProcedureDateMonth != null && $appointmentProcedureDateYear != null && $procedureType != null && $procedureCode != null && $appointmentProcedureDescription != null && $toothinvolved != null){
                     $queryOne = pg_query($connection, "insert into appointmentprocedure(appointmentProcedureID, appointmentProcedurePatientID, appointmentProcedureDateDay, appointmentProcedureDateMonth, appointmentProcedureDateYear, procedureType, procedureCode, appointmentProcedureDescription, toothinvolved, amountofprocedureone, amountofproceduretwo, amountofprocedurethree) values ('$appointmentProcedureID', '$appointmentProcedurePatientID', '$appointmentProcedureDateDay', '$appointmentProcedureDateMonth', '$appointmentProcedureDateYear', '$procedureType', '$procedureCode', '$appointmentProcedureDescription', '$toothinvolved', '$amountofprocedureone', '$amountofproceduretwo', '$amountofprocedurethree');"); //Insert Query
-                    echo $appointmentid;
+                    echo $appointmentProcedurePatientID;
 
                       //  if($queryOne /*&& $queryTwo*/) {
                     //echo "<script type='text/javascript'>alert('Successfull!');</script>";
