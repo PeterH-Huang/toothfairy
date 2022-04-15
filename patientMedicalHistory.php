@@ -43,7 +43,7 @@
                     if(pg_num_rows($query) == 1){
                         $result = pg_query($connection, "SELECT recordid, previousprocedureone,previousproceduretwo,previousprocedurethree,previousprocedurefour,previousprocedurefive FROM records WHERE recordpatientid = '$patientID'");
                         while ($row = pg_fetch_row($result)){
-                            echo "<h3>ID</h3>"
+                            echo "<h3>ID</h3>";
                             echo "<p align=center>$row[0] </p>"
                             echo "<table>";
                             echo "<th>Procedure(s)</th>";
