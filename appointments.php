@@ -48,7 +48,7 @@
 
 
          //putting everything into an array
-         if(pg_num_rows($query) == 1){
+
              $result = pg_query($connection, "SELECT appointmentpatientid FROM appointment WHERE appointmentemployeeid = '$dentist' AND appointmentdateday = '$day' AND appointmentdatemonth = '$month' AND  appointmentdateyear = '$year'");
              while ($row = pg_fetch_row($result)){
                  echo "<table>";
@@ -62,7 +62,7 @@
                  echo "</tr>";
                  echo "</table>";
              }
-         }
+
 //echo "<br> <$queryOne> <br>";
         ?>
      </p><br>
