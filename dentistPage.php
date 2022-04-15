@@ -25,14 +25,18 @@
     <div class="form">
         <form action="appointments.php" method="get">
             <label for="dentistID">Dentist ID: </label>
-            <input type="text" id="dentistID" name="dentistID" placeholder="XXXX"><br><br>
+            <input type="integer" id="dentistID" name="dentistID" placeholder="XXXX"><br><br>
+
             <p>Date</p>
             <label for="day">Day:</label>
-            <input type="text" id="dateDay" name="dateDay" placeholder="XX"><br><br>
+
+            <input type="integer" id="dateDay" name="dateDay" placeholder="XX"><br><br>
             <label for="date">Month:</label>
+
             <input type="text" id="dateMonth" name="dateMonth" placeholder="abc"><br><br>
             <label for="date">Year:</label>
-            <input type="text" id="dateYear" name="dateYear" placeholder="XXXX"><br><br>
+
+            <input type="integer" id="dateYear" name="dateYear" placeholder="XXXX"><br><br>
             <input type="submit" value="Submit">
         </form>
     </div>

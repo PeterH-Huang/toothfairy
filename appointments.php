@@ -34,7 +34,7 @@
          <?php
          $connection = pg_connect("host=ec2-52-21-136-176.compute-1.amazonaws.com
                      dbname=dae350stsd51e2 user=anbtnmsnsbhumz password=7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137");
-         
+
          //single query
          //$queryOne = pg_query($connection, "SELECT appointmentpatientid FROM appointment WHERE appointmentemployeeid = dentistID AND appointmentdateday = dateDay AND appointmentdatemonth = dateMonth AND  appointmentdateyear = dateYear");
 
