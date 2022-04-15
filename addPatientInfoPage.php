@@ -77,11 +77,11 @@
 
             if(isset($_POST['confirm'])){
                     echo "MADE IT"; 
-                    $userfirstName = /*(string)*/ $_POST['userFirstName'];
+                    $userfirstName = $_POST['userFirstName'];
                     $userLastName = $_POST['userLastName'];
                     $userMiddleName = $_POST['userMiddleName'];
                     $ssn = (int) $_POST['ssn'];
-                    $id = (int) $_POST['id'];
+                    //$id = (int) $_POST['id'];
                     $houseNumber = (int) $_POST['houseNumber'];
                     $streetName = $_POST['streetName'];
                     $city = $_POST['city'];
