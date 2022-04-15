@@ -33,15 +33,15 @@
     </div>
     <br>
     
-    <form action="appointments.html" method="post">
-        <input type="submit" name="listDentists" value="List aLL Dentists" />
-    </form>
+
+    <input type="submit" name="listDentists" value="List aLL Dentists" />
+
     <div class="space">
     </div>
      
-    <form action="appointments.html" method="post">
-        <input type="submit" name="listprocedure" value="Lists all Procedures" />
-    </form>
+
+    <input type="submit" name="listprocedure" value="Lists all Procedures" />
+
         
     <?php
         if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['listDentists']))
