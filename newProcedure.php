@@ -19,17 +19,6 @@
         <p>Add Procedure</p>
     </div>
     <br>
-
-    <div class="form">
-        // action needs to be different, maybe redirect to edit patient info page
-        <form action="appointments.html" method="post">
-            <label for="patientID">Patient ID: </label>
-            <input type="text" id="patientID" name="patientID" placeholder="XXXX"><br><br>
-            <label for="procedure">Add Procedure</label>
-            <input type="text" id="procedure" name="procedure"><br><br>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
     
     <form method="post" autocomplete="off">
             <p>Identification:</p>
