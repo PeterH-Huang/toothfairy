@@ -55,6 +55,7 @@
     <?php
         if(isset($_POST['listDentists']))
         {
+             echo "starting function"
              func();
          }
         function func()
@@ -64,11 +65,37 @@
             $conn = pg_connect("host=ec2-52-21-136-176.compute-1.amazonaws.com
             dbname=dae350stsd51e2 user=anbtnmsnsbhumz password=7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137");
 
+            if($connection) {
+                echo 'connected';
+            }
+
             // Check connection
             if ($conn->connect_error) {
                die("Connection failed: " . $conn->connect_error);
             }
 
+            if ($result->num_rows > 0) {
+                $result = pg_query($connection, "SELECT employeeBranchID, employeeType FROM employee WHERE employeeType = 'dentist'");
+                while ($row = pg_fetch_row($result)){
+                     echo "<div class='results'>";
+                     echo "<table>";
+                     echo "<tr>";
+                     echo "<td> <p align=center>$row[0] </p></td>";
+                     echo "<td> <p align=center>$row[1] </p></td>";
+                     echo "<td> <p align=center>$row[2] </p></td>";
+                     echo "<td> <p align=center>$row[3] </p></td>";
+                     echo "<td> <p align=center>$row[4] </p></td>";
+                     echo "<td> <p align=center>$row[5] </p></td>";
+                     echo "</tr>";
+                     echo "</table>";
+                     echo "</div>";
+                }
+            } else {
+              echo "0 results";
+            }
+
+
+            /*
             //Gets the employeeBranchID and the employeetype when it is equal to dentist displaying the employeeBranchID and all dentists across all branches
             //Can use BranchID to get names if necessary
             $sql = "SELECT employeeBranchID, employeeType FROM employee WHERE employeeType = 'dentist'";
@@ -77,11 +104,12 @@
             if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo "<div>". "id: " . $row["employeeBranchID"]. " - employeeType: " . $row["employeeType"]. "</div>";
+                    echo  "id: " . $row["employeeBranchID"]. " - employeeType: " . $row["employeeType"];
                 }
             } else {
-                echo "<div>". "0 results". "</div>";
+                echo "0 results";
             }
+            */
             $conn->close();  
         }
     
