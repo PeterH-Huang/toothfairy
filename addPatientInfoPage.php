@@ -96,7 +96,7 @@
                     $birthDay = (int) $_POST['birthDay'];
                     $birthMonth = (int) $_POST['birthMonth'];
                     $birthYear = (int) $_POST['birthYear'];
-                    $dependantOneFirstName = $_POST['dependantOneFirstName'];
+                    /*$dependantOneFirstName = $_POST['dependantOneFirstName'];
                     $dependantOneMiddleName = $_POST['dependantOneMiddleName'];
                     $dependantOneLastName = $_POST['dependantOneLastName'];
                     $dependantOneAge = (int) $_POST['dependantOneAge'];
@@ -107,7 +107,7 @@
                     $dependantThreeFirstName = $_POST['dependantThreeFirstName'];
                     $dependantThreeMiddleName = $_POST['dependantThreeMiddleName'];
                     $dependantThreeLastName = $_POST['dependantThreeLastName'];
-                    $dependantThreeAge = (int) $_POST['dependantThreeAge'];
+                    $dependantThreeAge = (int) $_POST['dependantThreeAge'];*/
                     $insuranceNumber = (int) $_POST['insuranceNumber'];
                     $userType = (int) $_POST['userType'];
 
