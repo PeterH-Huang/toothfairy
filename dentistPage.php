@@ -37,7 +37,7 @@
         </form>
     </div>
     <br>
-    
+
     <input type="submit" name="listDentists" value="List all Dentists" />
 
     <div class="space">
