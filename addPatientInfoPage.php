@@ -62,7 +62,7 @@
             <input type="number" id="insuranceNumber" name="insuranceNumber" placeholder="Insurance Number" min="0"> <br> <br>
             <p>User Type (Patient = 0, Employee = 1):</p>
             <input type="number" id="userType" name="userType" min="0" max="1"> <br> <br> <br>
-            <input type="submit" id="submit" name="submit" value="submit">
+            <input type="submit" id="submit" name="confirm" value="submit">
 
         </form>
 
@@ -75,7 +75,7 @@
                  echo 'there has been an error connecting';
              }
 
-            if(isset($_POST['submit'])){
+            if(isset($_POST['confirm'])){
                 //if($_POST['submit'] == 'Submit') {
                     //$property_agreementID = rand(8300,9500); 
                     $userfirstName = /*(string)*/ $_POST['userFirstName'];
