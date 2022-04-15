@@ -43,15 +43,15 @@
                     if(pg_num_rows($query) == 1){
                         $result = pg_query($connection, "SELECT recordid, previousprocedureone,previousproceduretwo,previousprocedurethree,previousprocedurefour,previousprocedurefive FROM records WHERE recordpatientid = '$patientID'");
                         while ($row = pg_fetch_row($result)){
+                            echo "<h3>ID</h3>"
+                            echo "<p align=center>$row[0] </p>"
                             echo "<table>";
-                            echo "<tr>";
-                            echo "<td> <p align=center>$row[0] </p></td>";
-                            echo "<td> <p align=center>$row[1] </p></td>";
-                            echo "<td> <p align=center>$row[2] </p></td>";
-                            echo "<td> <p align=center>$row[3] </p></td>";
-                            echo "<td> <p align=center>$row[4] </p></td>";
-                            echo "<td> <p align=center>$row[5] </p></td>";
-                            echo "</tr>";
+                            echo "<th>Procedure(s)</th>";
+                            echo "<tr><td> <p align=center>$row[1] </p></td></tr>";
+                            echo "<tr><td> <p align=center>$row[2] </p></td></tr>";
+                            echo "<tr><td> <p align=center>$row[3] </p></td></tr>";
+                            echo "<tr><td> <p align=center>$row[4] </p></td></tr>";
+                            echo "<tr><td> <p align=center>$row[5] </p></td></tr>";
                             echo "</table>";
                         }
                     
@@ -69,7 +69,6 @@
                 echo "DIDNT WORK";
             }
         ?>
-
 
         
 
