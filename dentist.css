@@ -59,6 +59,13 @@ form{
     color: azure;
 }
 
+.results{
+    text-align: center;
+    font-family: "Work Sans";
+    font-size: 23px;
+    color: black;
+}
+
 #button {
     border-width: 1px;
     border-radius: 10px;
