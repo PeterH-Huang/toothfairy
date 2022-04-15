@@ -27,7 +27,7 @@ form{
     text-align: left;
 }
 
-#dentistID, #date {
+#dentistID, #dateDay, #dateMonth, #dateYear {
     border: 0;
     border-radius: 10px;
     height: 25px ;
