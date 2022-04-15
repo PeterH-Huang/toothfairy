@@ -48,7 +48,7 @@
                             echo "<h3>ID:</h3>";
                             echo "<h3 align=center>$row[0] </h3>";
                             echo "<table class = 'center'>";
-                            echo "<th>Procedure(s)</th>";
+                            echo "<th>Procedure(s):</th>";
                             echo "<tr><td> <p align=center>$row[1] </p></td></tr>";
                             echo "<tr><td> <p align=center>$row[2] </p></td></tr>";
                             echo "<tr><td> <p align=center>$row[3] </p></td></tr>";
