@@ -55,12 +55,11 @@
     <?php
         if(isset($_POST['listDentists']))
         {
-             echo "starting function"
              func();
          }
         function func()
         {
-        
+
             // Connect to DB
             $conn = pg_connect("host=ec2-52-21-136-176.compute-1.amazonaws.com
             dbname=dae350stsd51e2 user=anbtnmsnsbhumz password=7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137");
@@ -78,7 +77,7 @@
             if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo  "id: " . $row["employeeBranchID"]. " - employeeType: " . $row["employeeType"];
+                    echo "id: " . $row["employeeBranchID"]. " - employeeType: " . $row["employeeType"]. "<br>";
                 }
             } else {
                 echo "0 results";
