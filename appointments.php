@@ -42,12 +42,7 @@
          $month = $_GET["dateMonth"];
          $year = $_GET["dateYear"];
 
-         echo $day;
-         echo $month;
-         echo $year;
-
-
-         //putting everything into an array
+           //putting everything into an array
 
              $result = pg_query($connection, "SELECT appointmentpatientid FROM appointment WHERE appointmentemployeeid = '$dentist' AND appointmentdateday = '$day' AND appointmentdatemonth = '$month' AND  appointmentdateyear = '$year'");
              while ($row = pg_fetch_row($result)){

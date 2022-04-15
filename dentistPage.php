@@ -53,7 +53,7 @@
 
         
     <?php
-        if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['listDentists']))
+        if(isset($_POST['listDentists']))
         {
              func();
          }
@@ -85,7 +85,7 @@
             $conn->close();  
         }
     
-        if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['listprocedure']))
+        if(isset($_POST['listprocedure']))
         {
              func1();
         }
