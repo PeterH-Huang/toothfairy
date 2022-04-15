@@ -25,7 +25,7 @@
         <div class="welcome" id="welcome">
             <p>Your Medical History:</p>
         </div> <br>
-
+<table>
         <?php 
             $connection = pg_connect("host=ec2-52-21-136-176.compute-1.amazonaws.com
             dbname=dae350stsd51e2 user=anbtnmsnsbhumz password=7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137");
@@ -35,9 +35,9 @@
                  echo 'there has been an error connecting';
              }
 
-            if(isset($_POST['submit'])){
+            if($_POST['submit']){
                     echo "MADE IT"; 
-                    $patientID = /*(string)*/ $_POST['patientID'];
+                    $patientID = $_POST['patientID'];
                     
                     $queryOne = pg_query("SELECT * FROM records WHERE recordpatientid = '$patientID'");
                     if(pg_num_rows($query) == 1){
@@ -74,7 +74,7 @@
         ?>
 
 
-
+        </table>
 
 
     </body>
