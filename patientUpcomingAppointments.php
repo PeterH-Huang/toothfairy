@@ -17,11 +17,12 @@
             <p>Enter Your Patient ID:</p>
         </div> <br>
 
+        <div class="welcome" id="welcome">
         <form method="post">
             <input type="text" name="patientID"><br>
             <input type="submit" id="submit" name="confirm" value="submit">
         </form>
-
+        </div>
 
         <div class="welcome" id="welcome">
             <p>Your Upcoming Appointments</p>
@@ -40,7 +41,7 @@
                     echo "MADE IT"; 
                     $patientID = /*(string)*/ $_POST['patientID'];
                     
-                    //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
+                    
                     $queryOne = pg_query($connection, "SELECT * FROM records WHERE appointmentpatientid = $patientID");
                     
                     
