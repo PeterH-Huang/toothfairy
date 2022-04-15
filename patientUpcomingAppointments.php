@@ -37,7 +37,7 @@
                     echo "MADE IT"; 
                     $patientID = $_POST['patientID'];
                     
-                    $query = pg_query("SELECT * FROM records WHERE appointmentpatientid = '$patientID'");
+                    $query = pg_query("SELECT * FROM appointment WHERE appointmentpatientid = '$patientID'");
                     if(pg_num_rows($query) == 1){
                         $result = pg_query($connection, "SELECT appointmentid, appointmentemployeeid,appointmentdateday,appointmentdatemonth,appointmentdateyear,starttime,endtime,appointmenttype,appointmentstatus,roomassigned FROM appointment WHERE appointmentpatientid = '$patientID'");
                         while ($row = pg_fetch_row($result)){
