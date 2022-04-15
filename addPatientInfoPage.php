@@ -75,7 +75,8 @@
                  echo 'there has been an error connecting';
              }
 
-            if(!isset($_POST['confirm'])){
+            if(isset($_POST['confirm'])){
+                    echo "MADE IT";
                 //if($_POST['submit'] == 'Submit') {
                     //$property_agreementID = rand(8300,9500); 
                     $userfirstName = /*(string)*/ $_POST['userFirstName'];
