@@ -18,7 +18,7 @@
         <div class="welcome" id="welcome">
         <form method="post">
             <input type="text" name="patientID"><br>
-            <input type="submit" id="submit" name="confirm" value="submit">
+            <input type="submit" id="submit" name="submit" value="submit">
         </form>
         </div>
 
@@ -35,7 +35,7 @@
                  echo 'there has been an error connecting';
              }
 
-            if(isset($_POST['confirm'])){
+            if(isset($_POST['submit'])){
                     echo "MADE IT"; 
                     $patientID = /*(string)*/ $_POST['patientID'];
                     
