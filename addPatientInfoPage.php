@@ -111,7 +111,7 @@
 
                     //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
                     $queryOne = pg_query($connection, "insert into users(
-                        patientid, patientssn, patientdependantonefirstname, patientdependantonemiddlename, 
+                        patientssn, patientdependantonefirstname, patientdependantonemiddlename, 
                         patientdependantonelastname, patientdependanttwofirstname, patientdependanttwomiddlename, 
                         patientdependanttwolastname, patientdependantthreefirstname, patientdependantthreemiddlename, 
                         patientdependantthreelastname) values ('$ssn', '$houseNumber', '$streetName', '$city', '$province', '$userFirstName', '$userMiddleName', '$userLastName', '$gender', '$age', '$insuraceNumber', '$emailAddress', '$birthDay', '$birthMonth', '$birthYear', '$userType', '$phoneNumber');"); //Insert Query
