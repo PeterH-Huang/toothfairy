@@ -42,7 +42,7 @@
                         echo"<div class='welcome' id='welcome'>
                         <p>Your Upcoming Appointments:</p>
                         <br></div>";
-                        $result = pg_query($connection, "SELECT appointmentid, appointmentemployeeid,appointmentdateday,appointmentdatemonth,appointmentdateyear,starttime,endtime,appointmenttype,appointmentstatus,roomassigned FROM appointment WHERE appointmentpatientid = '$patientID'");
+                        $result = pg_query($connection, "SELECT appointmentid,appointmentpatientid, appointmentemployeeid,appointmentdateday,appointmentdatemonth,appointmentdateyear,starttime,endtime,appointmenttype,appointmentstatus,roomassigned FROM appointment WHERE appointmentpatientid = '$patientID'");
                         while ($row = pg_fetch_row($result)){
                             echo "<table class = 'center'>";
                             echo "<tr>";
