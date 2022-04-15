@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
     <head>
         <title>Tooth Fairy</title>
         <link href="addPatientInfoPage.css" rel="stylesheet" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     </head>
     <body>
         <div class="backBtn">
@@ -111,15 +111,16 @@
                     $userType = (int) $_POST['userType'];
 
                     //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
-                        $queryOne = pg_query($connection, "insert into users values ($ssn, $houseNumber, $streetName, $city, $province, $userFirstName, $userMiddleName, $userLastName, $gender, $age, $insuranceNumber, $emailAddress, $birthDay, $birthMonth, $birthYear, $userType, $phoneNumber)"); //Insert Query
+                    $queryOne = pg_query($connection, "insert into users values ($ssn, $houseNumber, $streetName, $city, $province, $userFirstName, $userMiddleName, $userLastName, $gender, $age, $insuranceNumber, $emailAddress, $birthDay, $birthMonth, $birthYear, $userType, $phoneNumber)"); //Insert Query
                         
                         /*if($userType == 0) {
                             $queryTwo = pg_query($connection, "insert into patient values($id, $ssn, $dependantOneFirstName, $dependantOneMiddleName, $dependantOneLastName, $dependantTwoFirstName, $dependantTwoMiddleName, $dependantTwoLastName, $dependantThreeFirstName, $dependantThreeMiddleName, $dependantThreeLastName,)");
                         }*/
 
                       //  if($queryOne /*&& $queryTwo*/) {
-                            echo "<script type='text/javascript'>alert('Successfull!');</script>";
-                       // }
+                    //echo "<script type='text/javascript'>alert('Successfull!');</script>";
+                    echo "DONE";
+                            // }
                     //} else {
                     //    echo "<script type='text/javascript'>alert('fail');</script>";
                     //} 
