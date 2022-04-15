@@ -34,9 +34,9 @@
                      dbname=dae350stsd51e2 user=anbtnmsnsbhumz password=7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137");
          $queryOne = pg_query($connection, "SELECT appointmentpatientid FROM appointment WHERE appointmentemployeeid = dentistID AND appointmentdateday = dateDay AND appointmentdatemonth = dateMonth AND  appointmentdateyear = dateYear");
 
-         echo $_GET["dateDay"]; <br>
-         echo $_GET["dateMonth"]; <br>
-         echo $_GET["dateYear"]; <br>
+         echo $_GET["dateDay"];
+         echo $_GET["dateMonth"];
+         echo $_GET["dateYear"];
 
          //putting everything into an array
          if(pg_num_rows($query) == 1){
