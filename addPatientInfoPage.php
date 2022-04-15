@@ -16,7 +16,7 @@
         <div class="addPatientPageStatement" id="addPPageS">
             <p>Fill All Information Below to Add a New Patient</p>
         </div> <br>
-        <form autocomplete="off">
+        <form method="post" autocomplete="off">
             <p>Full Name:</p>
             <input type="text" id="firstName" name="firstName" placeholder="First Name">
             <input type="text" id="middleName" name="middleName" placeholder="Middle Name">
@@ -75,8 +75,7 @@
                  echo 'there has been an error connecting';
              }
 
-            //if(isset($_POST['confirm'])){
-                if(!empty($_POST["confirm"])) {
+            if(isset($_POST['confirm'])){
                     echo "MADE IT";
                 //if($_POST['submit'] == 'Submit') {
                     //$property_agreementID = rand(8300,9500); 
