@@ -3,8 +3,8 @@
 
     <head>
         <title>Tooth Fairy</title>
-        <link href="addPatientInfoPage.css" rel="stylesheet" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <link href="editPatientInfo.css" rel="stylesheet" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     </head>
     <body>
         <div class="backBtn">
@@ -13,16 +13,16 @@
         <div class="logoTitle">
             <p>Tooth Fairy</p>
         </div> <br> <br>
-        <div class="addPatientPageStatement" id="addPPageS">
-            <p>Fill All Information Below to Add a New Patient</p>
+        <div class="editPatientInfoStatement" id="editPInfoS">
+            <p>Fill All Information Below to Update a Patient's Information</p>
         </div> <br>
         <form method="post" autocomplete="off">
+            <p>Identification of the Patient You Want to Edit:</p>
+            <input type="text" id="ssn" name="ssn" placeholder="SSN"> <br> <br>
             <p>Full Name:</p>
             <input type="text" id="userFirstName" name="userFirstName" placeholder="First Name">
             <input type="text" id="userMiddleName" name="userMiddleName" placeholder="Middle Name">
             <input type="text" id="userLastName" name="userLastName" placeholder="Last Name"> <br> <br>
-            <p>Identification:</p>
-            <input type="text" id="ssn" name="ssn" placeholder="SSN"> <br> <br>
             <p>Address:</p>
             <input type="text" id="houseNumber" name="houseNumber" placeholder="House Number">
             <input type="text" id="streetName" name="streetName" placeholder="Street Name">
@@ -74,12 +74,10 @@
                     $userlastname = $_POST['userLastName'];
                     $usermiddlename = $_POST['userMiddleName'];
                     $ssn = (int) $_POST['ssn'];
-                    //$id = (int) $_POST['id'];
                     $housenumber = (int) $_POST['houseNumber'];
                     $streetname = $_POST['streetName'];
                     $city = $_POST['city'];
                     $province = $_POST['province'];
-                    //RADIO BUTTON FOR GENDER, FIGURE IT OUT
                     $gender = $_POST['gender'];
                     $age = (int) $_POST['age'];
                     $emailaddress = $_POST['emailAddress'];
@@ -87,23 +85,11 @@
                     $birthday = (int) $_POST['birthDay'];
                     $birthmonth = $_POST['birthMonth'];
                     $birthyear = (int) $_POST['birthYear'];
-                    /*$dependantOneFirstName = $_POST['dependantOneFirstName'];
-                    $dependantOneMiddleName = $_POST['dependantOneMiddleName'];
-                    $dependantOneLastName = $_POST['dependantOneLastName'];
-                    $dependantOneAge = (int) $_POST['dependantOneAge'];
-                    $dependantTwoFirstName = $_POST['dependantTwoFirstName'];
-                    $dependantTwoMiddleName = $_POST['dependantTwoMiddleName'];
-                    $dependantTwoLastName = $_POST['dependantTwoLastName'];
-                    $dependantTwoAge = (int) $_POST['dependantTwoAge'];
-                    $dependantThreeFirstName = $_POST['dependantThreeFirstName'];
-                    $dependantThreeMiddleName = $_POST['dependantThreeMiddleName'];
-                    $dependantThreeLastName = $_POST['dependantThreeLastName'];
-                    $dependantThreeAge = (int) $_POST['dependantThreeAge'];*/
                     $insuracenumber = (int) $_POST['insuraceNumber'];
                     $usertype = (int) $_POST['userType'];
 
                     //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
-                    $queryOne = pg_query($connection, "insert into users(ssn, housenumber, streetname, city, province, userfirstname, usermiddlename, userlastname, gender, age, insuracenumber, emailaddress, birthday, birthmonth, birthyear, usertype, phonenumber ) values ('$ssn', '$housenumber', '$streetname', '$city', '$province', '$userfirstname', '$usermiddlename', '$userlastname', '$gender', '$age', '$insuracenumber', '$emailaddress', '$birthday', '$birthmonth', '$birthyear', '$usertype', '$phonenumber');"); //Insert Query
+                    $queryOne = pg_query($connection, "update users set housenumber = $housenumber, streetname = $streetname, city = $city, province = $province, userfirstname = $userfirstname, usermiddlename = $usermiddlename, userlastname = $userlastname, gender = $gender, age = $age, insuracenumber = $insuracenumber, emailaddress = $emailaddress, birthday = $birthday, birthmonth = $birthmonth, birthyear = $birthyear, usertype = $usertype, phonenumber = $phonenumber where ssn = $ssn;"); //Insert Query
                     //$queryOne = pg_query($connection, "insert into users values ('123', '59', 'something', 'OTT', 'ON', 'soy', 'el', 'mur', 'male', '22', '202', 'smu@hotmail.com', '01', 'mar', '2000', '1', '6225554321');"); //Insert Query
     
                         /*if($userType == 0) {
@@ -127,5 +113,6 @@
                 echo "DIDNT WORK";
             }
         ?>
+
     </body>
 </html>
