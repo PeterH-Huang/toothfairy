@@ -15,11 +15,12 @@
         <div class="welcome" id="welcome">
             <p>Enter Your Patient ID:</p>
         </div> <br>
-
+        <div class="welcome" id="welcome">
         <form method="post">
             <input type="text" name="patientID"><br>
             <input type="submit" id="submit" name="confirm" value="submit">
         </form>
+        </div>
 
         <div class="welcome" id="welcome">
             <p>Your Medical History:</p>
