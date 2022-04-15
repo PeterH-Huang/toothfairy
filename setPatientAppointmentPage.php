@@ -13,7 +13,7 @@
         <div class="logoTitle">
             <p>Tooth Fairy</p>
         </div> <br> <br>
-        <div class="editPatientInfoStatement" id="editPInfoS">
+        <div class="addAppointmentInfoStatement" id="addApptmtInfoS">
             <p>Fill All Information Below to Create An Appointment</p>
         </div> <br>
         <form method="post" autocomplete="off">
@@ -59,7 +59,7 @@
                     $roomAssigned = $_POST['roomAssigned'];
 
                     //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
-                    $queryOne = pg_query($connection, "insert into appointment values ('$appointmentID', '$appointmentPatientID', '$appointmentEmployeeID', '$appointmentDateDay', '$appointmentDateMonth', '$appointmentDateYear', '$startTime', '$endTime', '$appointmentType', '$appointmentStatus', '$roomAssigned');"); //Insert Query
+                    $queryOne = pg_query($connection, "insert into appointment values ($appointmentID, $appointmentPatientID, $appointmentEmployeeID, $appointmentDateDay, '$appointmentDateMonth', $appointmentDateYear, '$startTime', '$endTime', '$appointmentType', $appointmentStatus, '$roomAssigned');"); //Insert Query
                         
                         /*if($userType == 0) {
                             $queryTwo = pg_query($connection, "insert into patient values($id, $ssn, $dependantOneFirstName, $dependantOneMiddleName, $dependantOneLastName, $dependantTwoFirstName, $dependantTwoMiddleName, $dependantTwoLastName, $dependantThreeFirstName, $dependantThreeMiddleName, $dependantThreeLastName,)");
