@@ -31,6 +31,10 @@ body {
     font-size: 14px;
 }
 
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 #button {
     border-width: 1px;

@@ -47,7 +47,7 @@
                             echo"<div class='history' id='history'>";
                             echo "<h3>ID</h3>";
                             echo "<p align=center>$row[0] </p>";
-                            echo "<table>";
+                            echo "<table class = 'center'>";
                             echo "<th>Procedure(s)</th>";
                             echo "<tr><td> <p align=center>$row[1] </p></td></tr>";
                             echo "<tr><td> <p align=center>$row[2] </p></td></tr>";
