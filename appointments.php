@@ -44,9 +44,10 @@
          $year = $_GET["dateYear"];
 
            //putting everything into an array
-             <div class="results">
+
              $result = pg_query($connection, "SELECT appointmentpatientid FROM appointment WHERE appointmentemployeeid = '$dentist' AND appointmentdateday = '$day' AND appointmentdatemonth = '$month' AND  appointmentdateyear = '$year'");
              while ($row = pg_fetch_row($result)){
+                 echo "<div class='results'>";
                  echo "<table>";
                  echo "<tr>";
                  echo "<td> <p align=center>$row[0] </p></td>";
@@ -57,8 +58,9 @@
                  echo "<td> <p align=center>$row[5] </p></td>";
                  echo "</tr>";
                  echo "</table>";
+                 echo "</div>";
              }
-             </div>
+
         ?>
      </p><br>
 
