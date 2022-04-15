@@ -22,9 +22,7 @@
         </form>
         </div>
 
-        <div class="welcome" id="welcome">
-            <p>Your Medical History:</p>
-        </div> <br>
+
 
         <?php 
             $connection = pg_connect("host=ec2-52-21-136-176.compute-1.amazonaws.com
@@ -43,6 +41,9 @@
                     if(pg_num_rows($query) == 1){
                         $result = pg_query($connection, "SELECT recordid, previousprocedureone,previousproceduretwo,previousprocedurethree,previousprocedurefour,previousprocedurefive FROM records WHERE recordpatientid = '$patientID'");
                         while ($row = pg_fetch_row($result)){
+                            echo"        <div class='welcome' id='welcome'>
+                            <p>Your Medical History:</p>
+                         <br>";
                             echo "<h3>ID</h3>";
                             echo "<p align=center>$row[0] </p>";
                             echo "<table>";
@@ -53,6 +54,7 @@
                             echo "<tr><td> <p align=center>$row[4] </p></td></tr>";
                             echo "<tr><td> <p align=center>$row[5] </p></td></tr>";
                             echo "</table>";
+                            echo "</div>";
                         }
                     
                     }
