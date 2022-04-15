@@ -46,20 +46,20 @@
 
             if(isset($_POST['confirm'])){
                     echo "MADE IT"; 
-                    $appointmentID = rand(0, 100000);
-                    $appointmentPatientID = (int) $_POST['appointmentPatientID'];
-                    $appointmentEmployeeID = (int) $_POST['appointmentEmployeeID'];
-                    $appointmentDateDay = (int) $_POST['appointmentDateDay'];
-                    $appointmentDateMonth = $_POST['appointmentDateMonth'];
-                    $appointmentDateYear = (int) $_POST['appointmentDateYear'];
-                    $startTime = $_POST['startTime'];
-                    $endTime = $_POST['endTime'];
-                    $appointmentType = $_POST['appointmentType'];
-                    $appointmentStatus = (int) $_POST['appointmentStatus'];
-                    $roomAssigned = $_POST['roomAssigned'];
+                    $appointmentid = rand(0, 100000);
+                    $appointmentpatientid = (int) $_POST['appointmentPatientID'];
+                    $appointmentemployeeid = (int) $_POST['appointmentEmployeeID'];
+                    $appointmentdateday = (int) $_POST['appointmentDateDay'];
+                    $appointmentdatemonth = $_POST['appointmentDateMonth'];
+                    $appointmentdateyear = (int) $_POST['appointmentDateYear'];
+                    $starttime = $_POST['startTime'];
+                    $endtime = $_POST['endTime'];
+                    $appointmenttype = $_POST['appointmentType'];
+                    $appointmentstatus = (int) $_POST['appointmentStatus'];
+                    $roomassigned = $_POST['roomAssigned'];
 
                     //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
-                    $queryOne = pg_query($connection, "insert into appointment values ($appointmentID, $appointmentPatientID, $appointmentEmployeeID, $appointmentDateDay, $appointmentDateMonth, $appointmentDateYear, $startTime, $endTime, $appointmentType, $appointmentStatus, $roomAssigned);"); //Insert Query
+                    $queryOne = pg_query($connection, "insert into appointment values ($appointmentid, '$appointmentpatientid', '$appointmentemployeeid', '$appointmentdateday', '$appointmentdatemonth', '$appointmentdateyear', '$starttime', '$endtime', '$appointmenttype', '$appointmentstatus', '$roomassigned');"); //Insert Query
                         
                         /*if($userType == 0) {
                             $queryTwo = pg_query($connection, "insert into patient values($id, $ssn, $dependantOneFirstName, $dependantOneMiddleName, $dependantOneLastName, $dependantTwoFirstName, $dependantTwoMiddleName, $dependantTwoLastName, $dependantThreeFirstName, $dependantThreeMiddleName, $dependantThreeLastName,)");
