@@ -39,11 +39,11 @@
                     
                     $query = pg_query($connection, "SELECT * FROM appointment WHERE appointmentpatientid = '$patientID'");
                     if(pg_num_rows($query) > 0){
+                        echo"<div class='welcome' id='welcome'>
+                        <p>Your Upcoming Appointments:</p>
+                        <br></div>";
                         $result = pg_query($connection, "SELECT appointmentid, appointmentemployeeid,appointmentdateday,appointmentdatemonth,appointmentdateyear,starttime,endtime,appointmenttype,appointmentstatus,roomassigned FROM appointment WHERE appointmentpatientid = '$patientID'");
                         while ($row = pg_fetch_row($result)){
-                            echo"<div class='welcome' id='welcome'>
-                                 <p>Your Upcoming Appointments:</p>
-                                 <br></div>";
                             echo "<table class = 'center'>";
                             echo "<tr>";
                             echo "<th>Appointment ID</th>";
@@ -58,16 +58,16 @@
                             echo "<th>Room Number:</th>";
                             echo "</tr>";
                             echo "<tr>";
-                            echo "<tr><td> <p align=center>$row[1] </p></td></tr>";
-                            echo "<tr><td> <p align=center>$row[2] </p></td></tr>";
-                            echo "<tr><td> <p align=center>$row[3] </p></td></tr>";
-                            echo "<tr><td> <p align=center>$row[4] </p></td></tr>";
-                            echo "<tr><td> <p align=center>$row[5] </p></td></tr>";
-                            echo "<tr><td> <p align=center>$row[6] </p></td></tr>";
-                            echo "<tr><td> <p align=center>$row[7] </p></td></tr>";
-                            echo "<tr><td> <p align=center>$row[8] </p></td></tr>";
-                            echo "<tr><td> <p align=center>$row[9] </p></td></tr>";
-                            echo "<tr><td> <p align=center>$row[10] </p></td></tr>";
+                            echo "<td> <p align=center>$row[1] </p></td>";
+                            echo "<td> <p align=center>$row[2] </p></td>";
+                            echo "<td> <p align=center>$row[3] </p></td>";
+                            echo "<td> <p align=center>$row[4] </p></td>";
+                            echo "<td> <p align=center>$row[5] </p></td>";
+                            echo "<td> <p align=center>$row[6] </p></td>";
+                            echo "<td> <p align=center>$row[7] </p></td>";
+                            echo "<td> <p align=center>$row[8] </p></td>";
+                            echo "<td> <p align=center>$row[9] </p></td>";
+                            echo "<td> <p align=center>$row[10] </p></td>";
                             echo "</tr>";
                             echo "</table>";
                             echo "</div>";
