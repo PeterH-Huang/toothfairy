@@ -74,8 +74,8 @@
                die("Connection failed: " . $conn->connect_error);
             }
 
+            $result = pg_query($connection, "SELECT employeeBranchID, employeeType FROM employee WHERE employeeType = 'dentist'");
             if ($result->num_rows > 0) {
-                $result = pg_query($connection, "SELECT employeeBranchID, employeeType FROM employee WHERE employeeType = 'dentist'");
                 while ($row = pg_fetch_row($result)){
                      echo "<div class='results'>";
                      echo "<table>";
