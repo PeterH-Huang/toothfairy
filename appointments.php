@@ -25,22 +25,26 @@
          <?php
          $connection = pg_connect("host=ec2-52-21-136-176.compute-1.amazonaws.com
          dbname=dae350stsd51e2 user=anbtnmsnsbhumz password=7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137");
-      echo $_GET["dentistID"]; ?>
+
+      $dentist = $_GET["dentistID"];
+      echo $dentist; ?>
       </p><br>
 
      <p> Todays patients are:
          <?php
          $connection = pg_connect("host=ec2-52-21-136-176.compute-1.amazonaws.com
                      dbname=dae350stsd51e2 user=anbtnmsnsbhumz password=7cd60d6bc02b2a802a4b0e107994f85faad6721a0557f67b0903832fa04bd137");
-         $queryOne = pg_query($connection, "SELECT appointmentpatientid FROM appointment WHERE appointmentemployeeid = dentistID AND appointmentdateday = dateDay AND appointmentdatemonth = dateMonth AND  appointmentdateyear = dateYear");
+         
+         //single query
+         //$queryOne = pg_query($connection, "SELECT appointmentpatientid FROM appointment WHERE appointmentemployeeid = dentistID AND appointmentdateday = dateDay AND appointmentdatemonth = dateMonth AND  appointmentdateyear = dateYear");
 
-         echo $_GET["dateDay"];
-         echo $_GET["dateMonth"];
-         echo $_GET["dateYear"];
+         $day = $_GET["dateDay"];
+         $month = $_GET["dateMonth"];
+         $year = $_GET["dateYear"];
 
          //putting everything into an array
          if(pg_num_rows($query) == 1){
-             $result = pg_query($connection, "SELECT appointmentpatientid FROM appointment WHERE appointmentemployeeid = dentistID AND appointmentdateday = dateDay AND appointmentdatemonth = dateMonth AND  appointmentdateyear = dateYear");
+             $result = pg_query($connection, "SELECT appointmentpatientid FROM appointment WHERE appointmentemployeeid = '$dentist' AND appointmentdateday = '$day 'AND appointmentdatemonth = '$month' AND  appointmentdateyear = '$year'");
              while ($row = pg_fetch_row($result)){
                  echo "<table>";
                  echo "<tr>";
