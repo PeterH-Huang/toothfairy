@@ -26,7 +26,7 @@
 
             <p>Date and Time:</p>
             <input type="text" id="appointmentProcedureDateDay" name="appointmentProcedureDateDay" placeholder="Appointment Day">
-            <input type="text" id="appointmentProcedureDateMonth" name="appointmentProcedureDateMonth placeholder="Appointment Month">
+            <input type="text" id="appointmentProcedureDateMonth" name="appointmentProcedureDateMonth" placeholder="Appointment Month">
             <input type="text" id="appointmentProcedureDateYear" name="appointmentProcedureDateYear" placeholder="Appointment Year">
 
             <p>Appointment Details:</p>
@@ -75,22 +75,13 @@
 			
 		    
 
-                    //if($appointmentProcedureID != null && $appointmentProcedurePatientID != null && $appointmentProcedureDateDay != null && $appointmentProcedureDateMonth != null && $appointmentProcedureDateYear != null && $procedureType != null && $procedureCode != null && $appointmentProcedureDescription != null && $toothinvolved != null){
+
                     $queryOne = pg_query($connection, "insert into appointmentprocedure(appointmentProcedureID, appointmentProcedurePatientID, appointmentProcedureDateDay, appointmentProcedureDateMonth, appointmentProcedureDateYear, procedureType, procedureCode, appointmentProcedureDescription, toothinvolved, amountofprocedureone, amountofproceduretwo, amountofprocedurethree) values ('$appointmentProcedureID', '$appointmentProcedurePatientID', '$appointmentProcedureDateDay', '$appointmentProcedureDateMonth', '$appointmentProcedureDateYear', '$procedureType', '$procedureCode', '$appointmentProcedureDescription', '$toothinvolved', '$amountofprocedureone', '$amountofproceduretwo', '$amountofprocedurethree');"); //Insert Query
                     echo $appointmentProcedurePatientID;
 
-                      //  if($queryOne /*&& $queryTwo*/) {
-                    //echo "<script type='text/javascript'>alert('Successfull!');</script>";
                     if($queryOne) {
                         echo "Done!";
                     }
-                            // }
-                    //} else {
-                    //    echo "<script type='text/javascript'>alert('fail');</script>";
-                    //} 
-                
-                
-                //}
                 
             } else {
                 echo "DIDNT WORK";
