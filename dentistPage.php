@@ -26,8 +26,13 @@
         <form action="appointments.html" method="get">
             <label for="dentistID">Dentist ID: </label>
             <input type="text" id="dentistID" name="dentistID" placeholder="XXXX"><br><br>
-            <label for="date">Date:</label>
-            <input type="text" id="date" name="date" placeholder="DD/MM/YYYY"><br><br>
+            <p>Date</p>
+            <label for="day">Day:</label>
+            <input type="text" id="dateDay" name="dateDay" placeholder="XX"><br><br>
+            <label for="date">Month:</label>
+            <input type="text" id="dateMonth" name="dateMonth" placeholder="abc"><br><br>
+            <label for="date">Year:</label>
+            <input type="text" id="dateYear" name="dateYear" placeholder="XXXX"><br><br>
             <input type="submit" value="Submit">
         </form>
     </div>
