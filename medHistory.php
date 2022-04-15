@@ -20,7 +20,7 @@ if (!$link)
 }
 
 
-$query = 'SELECT * FROM records WHERE recordpatientid = $_POST["patientID"]';
+$query = "SELECT * FROM records WHERE recordpatientid = $patientID";
 
 $result = pg_query($query);
 
