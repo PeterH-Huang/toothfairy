@@ -46,7 +46,7 @@
 
             if(isset($_POST['confirm'])){
                     echo "MADE IT"; 
-                    $appointmentid = rand(0, 100000);
+                    $appointmentid = (int) rand(0, 100000);
                     $appointmentpatientid = (int) $_POST['appointmentPatientID'];
                     $appointmentemployeeid = (int) $_POST['appointmentEmployeeID'];
                     $appointmentdateday = (int) $_POST['appointmentDateDay'];
@@ -59,7 +59,7 @@
                     $roomassigned = $_POST['roomAssigned'];
 
                     //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
-                    $queryOne = pg_query($connection, "insert into appointment(appointmentid, appointmentpatientid, appointmentemployeeid, appointmentdateday, appointmentdatemonth, appointmentdateyear, starttime, endtime, appointmenttype, appointmentstatus, roomassigned) values ($appointmentid, '$appointmentpatientid', '$appointmentemployeeid', '$appointmentdateday', '$appointmentdatemonth', '$appointmentdateyear', '$starttime', '$endtime', '$appointmenttype', '$appointmentstatus', '$roomassigned');"); //Insert Query
+                    $queryOne = pg_query($connection, "insert into appointment('appointmentid', 'appointmentpatientid', 'appointmentemployeeid', 'appointmentdateday', 'appointmentdatemonth', 'appointmentdateyear', 'starttime', 'endtime', 'appointmenttype', 'appointmentstatus', 'roomassigned') values ('$appointmentid', '$appointmentpatientid', '$appointmentemployeeid', '$appointmentdateday', '$appointmentdatemonth', '$appointmentdateyear', '$starttime', '$endtime', '$appointmenttype', '$appointmentstatus', '$roomassigned');"); //Insert Query
                         
                         /*if($userType == 0) {
                             $queryTwo = pg_query($connection, "insert into patient values($id, $ssn, $dependantOneFirstName, $dependantOneMiddleName, $dependantOneLastName, $dependantTwoFirstName, $dependantTwoMiddleName, $dependantTwoLastName, $dependantThreeFirstName, $dependantThreeMiddleName, $dependantThreeLastName,)");
