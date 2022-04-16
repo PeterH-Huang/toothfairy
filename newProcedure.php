@@ -19,6 +19,7 @@
         <p>Add Procedure</p>
     </div>
     <br>
+<<<<<<< HEAD
 
     <div class="form">
         <form action="appointments.html" method="post">
@@ -29,6 +30,8 @@
             <input type="submit" value="Submit">
         </form>
     </div>
+=======
+>>>>>>> 049ab6f3257bb8697c02f23712cb6afdfb28a2cb
     
     <form method="post" autocomplete="off">
             <p>Identification:</p>
@@ -36,7 +39,7 @@
 
             <p>Date and Time:</p>
             <input type="text" id="appointmentProcedureDateDay" name="appointmentProcedureDateDay" placeholder="Appointment Day">
-            <input type="text" id="appointmentProcedureDateMonth" name="appointmentProcedureDateMonth placeholder="Appointment Month">
+            <input type="text" id="appointmentProcedureDateMonth" name="appointmentProcedureDateMonth" placeholder="Appointment Month">
             <input type="text" id="appointmentProcedureDateYear" name="appointmentProcedureDateYear" placeholder="Appointment Year">
 
             <p>Appointment Details:</p>
@@ -85,10 +88,17 @@
 			
 		    
 
+<<<<<<< HEAD
                     $queryOne = pg_query($connection, "insert into appointmentprocedure(appointmentProcedureID, appointmentProcedurePatientID, appointmentProcedureDateDay, appointmentProcedureDateMonth, appointmentProcedureDateYear, procedureType, procedureCode, appointmentProcedureDescription, toothinvolved, amountofprocedureone, amountofproceduretwo, amountofprocedurethree) values ('$appointmentProcedureID', '$appointmentProcedurePatientID', '$appointmentProcedureDateDay', '$appointmentProcedureDateMonth', '$appointmentProcedureDateYear', '$procedureType', '$procedureCode', '$appointmentProcedureDescription', '$toothinvolved', '$amountofprocedureone', '$amountofproceduretwo', '$amountofprocedurethree');"); //Insert Query
                     echo $appointmentProcedurePatientID;
 
                       
+=======
+
+                    $queryOne = pg_query($connection, "insert into appointmentprocedure(appointmentProcedureID, appointmentProcedurePatientID, appointmentProcedureDateDay, appointmentProcedureDateMonth, appointmentProcedureDateYear, procedureType, procedureCode, appointmentProcedureDescription, toothinvolved, amountofprocedureone, amountofproceduretwo, amountofprocedurethree) values ('$appointmentProcedureID', '$appointmentProcedurePatientID', '$appointmentProcedureDateDay', '$appointmentProcedureDateMonth', '$appointmentProcedureDateYear', '$procedureType', '$procedureCode', '$appointmentProcedureDescription', '$toothinvolved', '$amountofprocedureone', '$amountofproceduretwo', '$amountofprocedurethree');"); //Insert Query
+                    echo $appointmentProcedurePatientID;
+
+>>>>>>> 049ab6f3257bb8697c02f23712cb6afdfb28a2cb
                     if($queryOne) {
                         echo "Done!";
                     }
