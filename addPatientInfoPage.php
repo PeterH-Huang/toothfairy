@@ -74,12 +74,10 @@
                     $userlastname = $_POST['userLastName'];
                     $usermiddlename = $_POST['userMiddleName'];
                     $ssn = (int) $_POST['ssn'];
-                    //$id = (int) $_POST['id'];
                     $housenumber = (int) $_POST['houseNumber'];
                     $streetname = $_POST['streetName'];
                     $city = $_POST['city'];
                     $province = $_POST['province'];
-                    //RADIO BUTTON FOR GENDER, FIGURE IT OUT
                     $gender = $_POST['gender'];
                     $age = (int) $_POST['age'];
                     $emailaddress = $_POST['emailAddress'];
@@ -90,26 +88,12 @@
                     $insuracenumber = (int) $_POST['insuraceNumber'];
                     $usertype = (int) $_POST['userType'];
 
-                    //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
                     $queryOne = pg_query($connection, "insert into users(ssn, housenumber, streetname, city, province, userfirstname, usermiddlename, userlastname, gender, age, insuracenumber, emailaddress, birthday, birthmonth, birthyear, usertype, phonenumber ) values ('$ssn', '$housenumber', '$streetname', '$city', '$province', '$userfirstname', '$usermiddlename', '$userlastname', '$gender', '$age', '$insuracenumber', '$emailaddress', '$birthday', '$birthmonth', '$birthyear', '$usertype', '$phonenumber');"); //Insert Query
-                    //$queryOne = pg_query($connection, "insert into users values ('123', '59', 'something', 'OTT', 'ON', 'soy', 'el', 'mur', 'male', '22', '202', 'smu@hotmail.com', '01', 'mar', '2000', '1', '6225554321');"); //Insert Query
     
-                        /*if($userType == 0) {
-                            $queryTwo = pg_query($connection, "insert into patient values($id, $ssn, $dependantOneFirstName, $dependantOneMiddleName, $dependantOneLastName, $dependantTwoFirstName, $dependantTwoMiddleName, $dependantTwoLastName, $dependantThreeFirstName, $dependantThreeMiddleName, $dependantThreeLastName,)");
-                        }*/
 
-                      //  if($queryOne /*&& $queryTwo*/) {
-                    //echo "<script type='text/javascript'>alert('Successfull!');</script>";
                     if($queryOne) {
                         echo "Done!";
                     }
-                            // }
-                    //} else {
-                    //    echo "<script type='text/javascript'>alert('fail');</script>";
-                    //} 
-                
-                
-                //}
                 
             } else {
                 echo "DIDNT WORK";

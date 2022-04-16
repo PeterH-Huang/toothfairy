@@ -88,27 +88,13 @@
                     $insuracenumber = (int) $_POST['insuraceNumber'];
                     $usertype = (int) $_POST['userType'];
 
-                    //if($firstName != null && $lastName != null && $middleName != null && $ssn != null && $id != null && $houseNumber != null && $streetName != null && $city != null && $province != null && $gender != null && $age != null && $emailAddress != null && $phoneNumber != null && $birthDay != null && $birthMonth != null && $birthYear != null){
                     $queryOne = pg_query($connection, "update users set housenumber = '$housenumber', streetname = '$streetname', city = '$city', province = '$province', userfirstname = '$userfirstname', usermiddlename = '$usermiddlename', userlastname = '$userlastname', gender = '$gender', age = '$age', insuracenumber = '$insuracenumber', emailaddress = '$emailaddress', birthday = '$birthday', birthmonth = '$birthmonth', birthyear = '$birthyear', usertype = '$usertype', phonenumber = '$phonenumber' where ssn = '$ssn';"); //Insert Query
-                    //$queryOne = pg_query($connection, "insert into users values ('123', '59', 'something', 'OTT', 'ON', 'soy', 'el', 'mur', 'male', '22', '202', 'smu@hotmail.com', '01', 'mar', '2000', '1', '6225554321');"); //Insert Query
     
-                        /*if($userType == 0) {
-                            $queryTwo = pg_query($connection, "insert into patient values($id, $ssn, $dependantOneFirstName, $dependantOneMiddleName, $dependantOneLastName, $dependantTwoFirstName, $dependantTwoMiddleName, $dependantTwoLastName, $dependantThreeFirstName, $dependantThreeMiddleName, $dependantThreeLastName,)");
-                        }*/
-
-                      //  if($queryOne /*&& $queryTwo*/) {
-                    //echo "<script type='text/javascript'>alert('Successfull!');</script>";
+                        
                     if($queryOne) {
                         echo "Done!";
                     }
-                            // }
-                    //} else {
-                    //    echo "<script type='text/javascript'>alert('fail');</script>";
-                    //} 
-                
-                
-                //}
-                
+                            
             } else {
                 echo "DIDNT WORK";
             }
