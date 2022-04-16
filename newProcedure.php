@@ -21,7 +21,6 @@
     <br>
 
     <div class="form">
-        // action needs to be different, maybe redirect to edit patient info page
         <form action="appointments.html" method="post">
             <label for="patientID">Patient ID: </label>
             <input type="text" id="patientID" name="patientID" placeholder="XXXX"><br><br>
@@ -86,22 +85,13 @@
 			
 		    
 
-                    //if($appointmentProcedureID != null && $appointmentProcedurePatientID != null && $appointmentProcedureDateDay != null && $appointmentProcedureDateMonth != null && $appointmentProcedureDateYear != null && $procedureType != null && $procedureCode != null && $appointmentProcedureDescription != null && $toothinvolved != null){
                     $queryOne = pg_query($connection, "insert into appointmentprocedure(appointmentProcedureID, appointmentProcedurePatientID, appointmentProcedureDateDay, appointmentProcedureDateMonth, appointmentProcedureDateYear, procedureType, procedureCode, appointmentProcedureDescription, toothinvolved, amountofprocedureone, amountofproceduretwo, amountofprocedurethree) values ('$appointmentProcedureID', '$appointmentProcedurePatientID', '$appointmentProcedureDateDay', '$appointmentProcedureDateMonth', '$appointmentProcedureDateYear', '$procedureType', '$procedureCode', '$appointmentProcedureDescription', '$toothinvolved', '$amountofprocedureone', '$amountofproceduretwo', '$amountofprocedurethree');"); //Insert Query
                     echo $appointmentProcedurePatientID;
 
-                      //  if($queryOne /*&& $queryTwo*/) {
-                    //echo "<script type='text/javascript'>alert('Successfull!');</script>";
+                      
                     if($queryOne) {
                         echo "Done!";
                     }
-                            // }
-                    //} else {
-                    //    echo "<script type='text/javascript'>alert('fail');</script>";
-                    //} 
-                
-                
-                //}
                 
             } else {
                 echo "DIDNT WORK";
